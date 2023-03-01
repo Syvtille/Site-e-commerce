@@ -1,7 +1,8 @@
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$ index.php?url=$1
+RewriteRule ^post/$ index.php?url=post
+#https://s4-gp98.kevinpecro.info/post
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ index.php?url=$1
