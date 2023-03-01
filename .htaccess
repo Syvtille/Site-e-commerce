@@ -1,7 +1,7 @@
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^post/$ index.php?url=post
+RewriteRule ^post/([a-zA-Z0-9-]+)/$ index.php?url=post&identifiant=$1
 #https://s4-gp98.kevinpecro.info/post
 
 RewriteCond %{REQUEST_FILENAME} !-f
