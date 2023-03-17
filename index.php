@@ -1,5 +1,7 @@
 <?php
 
+$idUser=1;
+
 require_once('src/controllers/c-accueil.php');
 require_once('src/controllers/c-post.php');
 require_once('src/controllers/c-produits.php');

@@ -45,5 +45,6 @@ $values .= $value;
 }
 $requete = "INSERT INTO $table ($requete) VALUES ('$values')";
 $stmt = $pdo->query($requete);
+return $pdo->lastInsertId();
 }
 ?>
