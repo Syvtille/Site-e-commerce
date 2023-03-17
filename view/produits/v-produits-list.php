@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <div class="image-produit">
-                        <img src="<?=$unProduits['image']?>" alt="<?=$unProduits['nom']?>"
+                        <img src="assets/img/<?=$unProduits['image']?>" alt="<?=$unProduits['nom']?>"
                     </div>
 
                     <div class="card-body">
