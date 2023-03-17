@@ -18,8 +18,9 @@
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="produits/<?=$unProduits['identifiant']?>/" class="btn btn-sm btn-outline-secondary"><?=$unProduits['prix']?> €</a>
+                                <a href="produits/<?=$unProduits['identifiant']?>/" class="btn btn-sm btn-outline-secondary">Ajouter au Panier</a>
                             </div>
+                            <p><strong><?=$unProduits['prix']?> €</strong></p>
                             <small class="text-muted">En stock : <?=$unProduits['stock']?></small>
                         </div>
                     </div>

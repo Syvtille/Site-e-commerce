@@ -45,7 +45,7 @@ function produitsList($lstProduits)
 }
 
 function ajouterAuPanier($idProduit, $quantite){
-    global $idUser;
+    global $idUser, $pdo;
 
     $unPanier=get_result("SELECT * FROM panier WHERE id_client = $idUser");
     if(!$unPanier) {
@@ -59,11 +59,7 @@ function ajouterAuPanier($idProduit, $quantite){
 
     $inPanier = get_result("SELECT id, quantite FROM panier_produit WHERE id_panier = $idPanier AND id_produit = $idProduit");
     if($inPanier){
-        $quantite += $inPanier['quantite'];
-        $valuesBdd = array(
-            "quantite" => $quantite
-        );
-        $idPanier = set_insert("panier_produit", $valuesBdd);
+        $pdo->query("UPDATE panier_produit SET quantite = quantite + $quantite WHERE id = '" . $inPanier['id'] . "'");
     }
     else{
         $valuesBdd = array(
@@ -71,6 +67,6 @@ function ajouterAuPanier($idProduit, $quantite){
             "id_produit" => $idProduit,
             "quantite" => $quantite
         );
-        $idPanier = set_insert("panier", $valuesBdd);
+        set_insert("panier_produit", $valuesBdd);
     }
 }

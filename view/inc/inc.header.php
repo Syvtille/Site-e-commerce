@@ -18,6 +18,9 @@
             <li class="nav-item">
                 <a href="post/" class="nav-link <?php if($page=='post') echo 'active';?>">Blog</a>
             </li>
+            <li>
+                <a href="panier/" class="nav-link <?php if($page=='panier') echo 'active';?>">Panier</a>
+            </li>
         </ul>
     </header>
 </div>
