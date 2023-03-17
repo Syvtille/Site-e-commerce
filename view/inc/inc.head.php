@@ -7,7 +7,3 @@
     <link rel="stylesheet" href="src/include/css/style.css">
 </head>
 <body>
-<main></main>
-<footer></footer>
-</body>
-</html>

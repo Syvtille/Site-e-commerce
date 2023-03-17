@@ -1,9 +1,9 @@
 <?php
 $port = 3306;
 $server = "localhost";
-$base = "s4-demo3";
-$user = "s4-demo3";
-$mdp = "30g3h@iNh?rhqTJx";
+$base = "s4-gp98";
+$user = "s4-gp98";
+$mdp = "^HshdDu*G5vdw1p1";
 
 try {
 $pdo = new PDO ("mysql:host=$server;port=$port;dbname=$base;charset=utf8", $user, $mdp);

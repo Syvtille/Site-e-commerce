@@ -22,5 +22,3 @@
     </header>
 </div>
 <main>
-
-</main>
