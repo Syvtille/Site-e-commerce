@@ -5,6 +5,7 @@ $idUser=1;
 require_once('src/controllers/c-accueil.php');
 require_once('src/controllers/c-post.php');
 require_once('src/controllers/c-produits.php');
+require_once('src/controllers/c-panier.php');
 
 if(isset($_GET['url']) && $_GET['url']){
     $url = rtrim($_GET['url'], '/');

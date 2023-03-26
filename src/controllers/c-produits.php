@@ -59,7 +59,9 @@ function ajouterAuPanier($idProduit, $quantite){
 
     $inPanier = get_result("SELECT id, quantite FROM panier_produit WHERE id_panier = $idPanier AND id_produit = $idProduit");
     if($inPanier){
-        $pdo->query("UPDATE panier_produit SET quantite = quantite + $quantite WHERE id = '" . $inPanier['id'] . "'");
+//        $pdo->query("UPDATE panier_produit SET quantite = quantite + $quantite WHERE id = '" . $inPanier['id'] . "'");
+        $stmt = $pdo->prepare("UPDATE panier_produit SET quantite = quantite + ? WHERE id = ?");
+        $stmt->execute([$quantite, $inPanier['id']]);
     }
     else{
         $valuesBdd = array(
