@@ -1,39 +1,56 @@
-<div class="cart">
-    <h2>Panier</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Produit</th>
-            <th>Quantité</th>
-            <th>Prix unitaire</th>
-            <th>Total</th>
-            <th>Supprimer</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        // Boucle pour afficher les produits du panier
-        foreach ($panier as $produit) {
-        $total = $produit['prix'] * $produit['quantite'];
-        ?>
-        <tr>
-            <td><?php echo $produit['nom']; ?></td>
-            <td><?php echo $produit['quantite']; ?></td>
-            <td><?php echo $produit['prix']; ?></td>
-            <td><?php echo $total; ?></td>
-            <td>
-                <form method="post" action="supprimerPanier.php">
-                    <input type="hidden" name="id" value="<?php echo $produit['id']; ?>">
-                    <input type="submit" value="Supprimer">
-                </form>
-            </td>
-        </tr>
-        <?php
-        }
-        ?>
-        </tbody>
-    </table>
-    <p>Total : <?php echo $totalPanier; ?></p>
-    <a href="index.php">Retour à l'accueil</a>
-</div>
+<?php
+session_start();
+?>
 
+<div class="container">
+    <h1>Votre panier</h1>
+
+    <?php if(empty($_SESSION['panier'])) : ?>
+        <p>Votre panier est vide.</p>
+    <?php else: ?>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix unitaire</th>
+                <th>Quantité</th>
+                <th>Prix total</th>
+                <th>Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($_SESSION['panier'] as $idProduit => $quantite) : ?>
+                <?php
+                // Récupération des informations du produit depuis la base de données
+                $requete = $bdd->prepare('SELECT * FROM produits WHERE id = ?');
+                $requete->execute([$idProduit]);
+                $produit = $requete->fetch();
+                $requete->closeCursor();
+
+                // Calcul du prix total pour ce produit
+                $prixTotalProduit = $produit['prix'] * $quantite;
+                ?>
+                <tr>
+                    <td><?= $produit['nom'] ?></td>
+                    <td><?= $produit['prix'] ?> €</td>
+                    <td><?= $quantite ?></td>
+                    <td><?= $prixTotalProduit ?> €</td>
+                    <td><a href="supprimer-produit.php?id=<?= $idProduit ?>"><i class="fa fa-trash"></i></a></td>
+                </tr>
+            <?php endforeach; ?>
+            <tr>
+                <td colspan="3"><strong>Total :</strong></td>
+                <td colspan="2"><strong><?= array_sum(array_map(function($quantite, $idProduit) use ($bdd) {
+                            $requete = $bdd->prepare('SELECT prix FROM produits WHERE id = ?');
+                            $requete->execute([$idProduit]);
+                            $prix = $requete->fetchColumn();
+                            $requete->closeCursor();
+                            return $quantite * $prix;
+                        }, $_SESSION['panier'], array_keys($_SESSION['panier']))) ?> €</strong></td>
+            </tr>
+            </tbody>
+        </table>
+
+    <?php endif; ?>
+</div>
