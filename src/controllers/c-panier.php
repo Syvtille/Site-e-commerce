@@ -11,4 +11,6 @@ function panier(){
     include('view/panier/v-panier.php');
     include('view/inc/inc.footer.php');
 
+    //pensez à modifier la quantité produit via le panier = point bonus
+
 }
