@@ -7,6 +7,7 @@
             <th>Quantité</th>
             <th>Prix unitaire</th>
             <th>Prix total</th>
+            <th class="supprimerDuPanier"><!--empty on purpose--></th>
         </tr>
         </thead>
         <tbody>
@@ -21,6 +22,9 @@
                 <td><?= $panierProduit['quantite'] ?></td>
                 <td><?= $panierProduit['prix'] ?> €</td>
                 <td><?= $prixTotal ?> €</td>
+                <td>
+                    <button href="" type="button" class="btn btn-danger btn-sm supprimerDuPanier" data-id="<?= $panierProduit['id'] ?>">Supprimer</button>
+                </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
