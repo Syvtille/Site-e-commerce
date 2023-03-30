@@ -23,7 +23,7 @@ session_start();
             <?php foreach($_SESSION['panier'] as $idProduit => $quantite) : ?>
                 <?php
                 // Récupération des informations du produit depuis la base de données
-                $requete = $bdd->prepare('SELECT * FROM produits WHERE id = ?');
+                $requete = $bdd->prepare('SELECT * FROM produit WHERE id = ?');
                 $requete->execute([$idProduit]);
                 $produit = $requete->fetch();
                 $requete->closeCursor();

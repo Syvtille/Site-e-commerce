@@ -15,6 +15,9 @@
             <li class="nav-item">
                 <a href="/" class="nav-link <?php if($page=='accueil') echo 'active';?>">Accueil</a>
             </li>
+            <li>
+                <a href="produits/" class="nav-link <?php if($page=='produits') echo 'active';?>">Produits</a>
+            </li>
             <li class="nav-item">
                 <a href="post/" class="nav-link <?php if($page=='post') echo 'active';?>">Blog</a>
             </li>
