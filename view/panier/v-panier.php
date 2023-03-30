@@ -23,7 +23,7 @@
                 <td><?= $panierProduit['prix'] ?> €</td>
                 <td><?= $prixTotal ?> €</td>
                 <td>
-                    <button href="" type="button" class="btn btn-danger btn-sm supprimerDuPanier" data-id="<?= $panierProduit['id'] ?>">Supprimer</button>
+                    <a href="panier/<?=$panierProduit['id_produit']?>/" type="button" class="btn btn-danger btn-sm supprimerDuPanier">Supprimer</a>
                 </td>
             </tr>
         <?php endforeach; ?>

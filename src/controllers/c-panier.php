@@ -2,15 +2,29 @@
 
 require_once('src/model.php');
 
-function panier() {
+function panier()
+{
     global $idUser;
 
-    $panierProduits = get_results("SELECT p.nom, pp.quantite, p.prix FROM panier_produit pp JOIN panier pa ON pp.id_panier = pa.id JOIN produit p ON pp.id_produit = p.id WHERE pa.id_client = $idUser");
+    if (isset($_GET['identifiant']) && $_GET['identifiant']) {
+        $unPanierProduit = get_result("SELECT pp.id FROM panier_produit pp JOIN panier pa ON pp.id_panier = pa.id WHERE pa.id_client = " . $idUser . " AND pp.id_produit = " . $_GET['identifiant']);
+        if ($unPanierProduit) {
+            $valuesBdd = array(
+                "id" => $unPanierProduit['id']
+            );
+            set_delete("panier_produit", $valuesBdd);
+        }
 
-    $menu['page'] = "panier";
+        Header('Location: https://s4-gp98.kevinpecro.info/panier/');
+    }
+    else {
+        $panierProduits = get_results("SELECT p.nom, pp.quantite, p.prix, pp.id_produit FROM panier_produit pp JOIN panier pa ON pp.id_panier = pa.id JOIN produit p ON pp.id_produit = p.id WHERE pa.id_client = $idUser");
 
-    include('view/inc/inc.head.php');
-    include('view/inc/inc.header.php');
-    include('view/panier/v-panier.php');
-    include('view/inc/inc.footer.php');
+        $menu['page'] = "panier";
+
+        include('view/inc/inc.head.php');
+        include('view/inc/inc.header.php');
+        include('view/panier/v-panier.php');
+        include('view/inc/inc.footer.php');
+    }
 }
