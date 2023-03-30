@@ -2,15 +2,33 @@
 
 require_once('src/model.php');
 
-function panier(){
+function afficherPanier() {
+    global $idUser;
+
+    $panierProduits = get_results("SELECT p.nom, pp.quantite, p.prix FROM panier_produit pp JOIN panier pa ON pp.id_panier = pa.id JOIN produit p ON pp.id_produit = p.id WHERE pa.id_client = $idUser");
+
     $menu['page'] = "panier";
 
-    //Traitement
     include('view/inc/inc.head.php');
     include('view/inc/inc.header.php');
     include('view/panier/v-panier.php');
     include('view/inc/inc.footer.php');
-
-    //pensez à modifier la quantité produit via le panier = point bonus
-
 }
+
+afficherPanier();
+
+//
+//require_once('src/model.php');
+//
+//function panier(){
+//    $menu['page'] = "panier";
+//
+//    //Traitement
+//    include('view/inc/inc.head.php');
+//    include('view/inc/inc.header.php');
+//    include('view/panier/v-panier.php');
+//    include('view/inc/inc.footer.php');
+//
+//    //pensez à modifier la quantité produit via le panier = point bonus
+//
+//}
