@@ -3,13 +3,14 @@
 require_once('src/model.php');
 
 function post(){
+    global $urlSite;
     if(isset($_GET['identifiant']) && $_GET['identifiant']){
         $unPost = get_result("SELECT * FROM post WHERE identifiant = '".$_GET['identifiant']."' AND statut=1");
         if($unPost){
             postSimple($unPost);
         }
         else{
-            Header('Location: https://s4-gp98.kevinpecro.info/post/');
+            Header('Location: ' . $urlSite . 'post/');
             exit();
         }
     }

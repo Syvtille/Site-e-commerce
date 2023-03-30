@@ -1,6 +1,7 @@
 <?php
 
 $idUser=1;
+$urlSite = "https://s4-gp98.kevinpecro.info/";
 
 require_once('src/controllers/c-accueil.php');
 require_once('src/controllers/c-post.php');

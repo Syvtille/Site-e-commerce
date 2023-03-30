@@ -3,6 +3,7 @@
 require_once('src/model.php');
 
 function produits(){
+    global $urlSite;
     if(isset($_GET['identifiant']) && $_GET['identifiant']){
         $unProduits = get_result("SELECT * FROM produit WHERE identifiant = '".$_GET['identifiant']."' AND statut=1");
         if($unProduits){
@@ -12,7 +13,7 @@ function produits(){
             produitsSimple($unProduits);
         }
         else{
-            Header('Location: https://s4-gp98.kevinpecro.info/produits/');
+            Header('Location: ' . $urlSite . 'produits/');
             exit();
         }
     }

@@ -7,7 +7,7 @@
             <th>Quantité</th>
             <th>Prix unitaire</th>
             <th>Prix total</th>
-            <th class="supprimerDuPanier"><!--empty on purpose--></th>
+            <th class="supprimerDuPanier"></th>
         </tr>
         </thead>
         <tbody>

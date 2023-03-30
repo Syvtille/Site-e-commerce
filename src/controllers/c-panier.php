@@ -4,7 +4,7 @@ require_once('src/model.php');
 
 function panier()
 {
-    global $idUser;
+    global $idUser, $urlSite;
 
     if (isset($_GET['identifiant']) && $_GET['identifiant']) {
         $unPanierProduit = get_result("SELECT pp.id FROM panier_produit pp JOIN panier pa ON pp.id_panier = pa.id WHERE pa.id_client = " . $idUser . " AND pp.id_produit = " . $_GET['identifiant']);
@@ -15,7 +15,7 @@ function panier()
             set_delete("panier_produit", $valuesBdd);
         }
 
-        Header('Location: https://s4-gp98.kevinpecro.info/panier/');
+        Header('Location: ' . $urlSite . 'panier/');
     }
     else {
         $panierProduits = get_results("SELECT p.nom, pp.quantite, p.prix, pp.id_produit FROM panier_produit pp JOIN panier pa ON pp.id_panier = pa.id JOIN produit p ON pp.id_produit = p.id WHERE pa.id_client = $idUser");
