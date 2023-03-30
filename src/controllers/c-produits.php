@@ -51,7 +51,7 @@ function ajouterAuPanier($idProduit, $quantite){
     if(!$unPanier) {
         $valuesBdd = array(
             "id_client" => $idUser,
-            "date" => date("Y-m-d H:i:s")
+            "date_creation" => date("Y-m-d H:i:s")
         );
         $idPanier = set_insert("panier", $valuesBdd);
     }
