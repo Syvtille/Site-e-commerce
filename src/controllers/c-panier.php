@@ -2,7 +2,7 @@
 
 require_once('src/model.php');
 
-function afficherPanier() {
+function panier() {
     global $idUser;
 
     $panierProduits = get_results("SELECT p.nom, pp.quantite, p.prix FROM panier_produit pp JOIN panier pa ON pp.id_panier = pa.id JOIN produit p ON pp.id_produit = p.id WHERE pa.id_client = $idUser");
@@ -14,8 +14,6 @@ function afficherPanier() {
     include('view/panier/v-panier.php');
     include('view/inc/inc.footer.php');
 }
-
-afficherPanier();
 
 //
 //require_once('src/model.php');
