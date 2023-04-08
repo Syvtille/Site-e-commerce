@@ -27,7 +27,7 @@ function produitsSimple($unProduits)
 {
     $menu['page'] = "produits";
 
-    //Traitement
+    
     include('view/inc/inc.head.php');
     include('view/inc/inc.header.php');
     include('view/produits/v-produits.php');
@@ -38,7 +38,7 @@ function produitsList($lstProduits)
 {
     $menu['page'] = "produits";
 
-    //Traitement
+    
     include('view/inc/inc.head.php');
     include('view/inc/inc.header.php');
     include('view/produits/v-produits-list.php');
