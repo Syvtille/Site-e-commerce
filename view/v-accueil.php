@@ -1,5 +1,8 @@
+<?php
+global $nomSite;
+?>
 <div class="banner">
-    <h2>Bienvenue sur Confi'Délice !</h2>
+    <h2>Bienvenue sur <?= $nomSite; ?> !</h2>
 </div>
 
 <div class="container">
@@ -26,5 +29,5 @@
 </div>
 
 <footer>
-    &copy; <?= date("Y"); ?> Confi'Délice. Tous droits réservés.
+    &copy; <?= date("Y"); ?> <?=$nomSite; ?>. Tous droits réservés.
 </footer>

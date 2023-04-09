@@ -1,3 +1,10 @@
+:root {
+    --color-dark : #454545;
+    --color-blank : #FFE6C7;
+    --color-light : #FFA559;
+    --color-medium : #FF6000;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,16 +12,49 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: var(--color-dark);
     color: white;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
+}
+
+.title-site{
+    color: var(--color-blank);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    position: relative;
+    left: 10px;
+    transition : 0.5s;
+}
+
+.title-site:hover {
+    color: var(--color-blank);
+    letter-spacing: 4px;
+    font-size: 25px;
+    margin-top: 1px;
 }
 
 header h1 {
     margin: 0;
+}
+
+.main-header li a {
+    color: var(--color-light) !important;
+    transition: ease-in 0.2s;
+}
+.main-header li a:hover {
+    background-color: rgba(255, 230, 199, 0.25) !important;
+}
+
+.main-header li a.active,
+.main-header li a.active:hover{
+    background-color: var(--color-blank) !important;
+    color: var(--color-dark) !important;
 }
 
 .banner {

@@ -1,4 +1,5 @@
 <?php
+    global $nomSite;
 
     if(isset($menu['page']) && $menu['page'])
         $page = $menu['page'];
@@ -6,12 +7,13 @@
 
 ?>
 <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <span class="fs-4">Nom du site</span>
+    <header class="d-flex flex-wrap py-3 mb-4 border-bottom">
+        <a href="/" class="title-site d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+<!--            <img src="assets/img/logo.png" alt="Logo" class="logo">-->
+            <span class="fs-4"><?=$nomSite?></span>
         </a>
 
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills main-header">
             <li class="nav-item">
                 <a href="/" class="nav-link <?php if($page=='accueil') echo 'active';?>">Accueil</a>
             </li>
