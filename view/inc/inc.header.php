@@ -15,16 +15,28 @@
 
         <ul class="nav nav-pills main-header">
             <li class="nav-item">
-                <a href="/" class="nav-link <?php if($page=='accueil') echo 'active';?>">Accueil</a>
+                <a href="/" class="nav-link <?php if($page=='accueil') echo 'active';?>">
+                    Accueil
+                    <span></span><span></span><span></span><span></span>
+                </a>
             </li>
             <li>
-                <a href="produits/" class="nav-link <?php if($page=='produits') echo 'active';?>">Produits</a>
+                <a href="produits/" class="nav-link <?php if($page=='produits') echo 'active';?>">
+                    Produits
+                    <span></span><span></span><span></span><span></span>
+                </a>
             </li>
             <li class="nav-item">
-                <a href="post/" class="nav-link <?php if($page=='post') echo 'active';?>">Blog</a>
+                <a href="post/" class="nav-link <?php if($page=='post') echo 'active';?>">
+                    Blog
+                    <span></span><span></span><span></span><span></span>
+                </a>
             </li>
             <li>
-                <a href="panier/" class="nav-link <?php if($page=='panier') echo 'active';?>">Panier</a>
+                <a href="panier/" class="nav-link <?php if($page=='panier') echo 'active';?>">
+                    Panier
+                    <span></span><span></span><span></span><span></span>
+                </a>
             </li>
         </ul>
     </header>
