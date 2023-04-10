@@ -37,7 +37,6 @@ global $nomSite;
 <div class="container">
     <h1>Produits populaires</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <!-- Vous pouvez remplacer ces données par les données réelles de vos produits -->
         <?php for ($i = 0; $i < 6; $i++): ?>
             <div class="col">
                 <div class="card">
