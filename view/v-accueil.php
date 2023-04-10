@@ -47,7 +47,7 @@ global $nomSite;
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <?php for ($i = 0; $i < 6; $i++): ?>
             <div class="col">
-                <div class="card">
+                <div class="card accueil-card-produit">
                     <img src="assets/img/product-sample.jpg" alt="Product Name">
                     <div class="card-body">
                         <h5 class="card-title">Nom du produit</h5>
@@ -58,6 +58,10 @@ global $nomSite;
                         <a href="#" class="btn btn-primary">Ajouter au panier</a>
                         <small>En stock : 10</small>
                     </div>
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
                 </div>
             </div>
         <?php endfor; ?>
