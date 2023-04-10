@@ -6,14 +6,14 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-image: url('../../../assets/img/bg-motif.jpg');
     background-repeat: repeat;
     background-size: 500px;
-    background-color: rgba(255, 165, 89, 0.25);
-    /*background-color: rgba(255, 230, 199, 0.25);*/
+    /*background-color: rgba(255, 165, 89, 0.25);*/
+    background-color: rgba(255, 230, 199, 0.25);
     background-blend-mode: darken;
 }
 
@@ -113,6 +113,31 @@ header h1 {
 .banner h2 {
     color: white;
     font-size: 48px;
+    margin: 0;
+}
+
+.accueil-title-wrapper {
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 5rem;
+    color: white;
+    background-color: var(--color-dark);
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 90%;
+}
+.accueil-title-wrapper h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+.accueil-title-wrapper h3 {
+    font-size: 24px;
     margin: 0;
 }
 

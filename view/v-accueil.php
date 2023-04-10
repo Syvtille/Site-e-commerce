@@ -34,6 +34,14 @@ global $nomSite;
     </a>
 </div>
 
+<div class="accueil-produits">
+    <div class="accueil-title-wrapper">
+        <h2 class="accueil-title">À ne pas manquer</h2>
+        <h3 class="accueil-subtitle">Découvrez nos coups de coeurs et nos nouveautés.</h3>
+    </div>
+<!--    mettre les produits-->
+</div>
+
 <div class="container">
     <h1>Produits populaires</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
