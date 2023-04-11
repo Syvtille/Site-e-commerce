@@ -15,13 +15,13 @@ global $nomSite;
     </ol>
     <div class="carousel-inner carousel-accueil">
         <div class="carousel-item active">
-            <img src="../assets/img/banner-nouveaute.png" class="d-block w-100" alt="...">
+            <img src="../assets/img/banner-nouveaute-min.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="../assets/img/banner-fraise.png" class="d-block w-100" alt="...">
+            <img src="../assets/img/banner-fraise-min.png" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="../assets/img/banner-fructose.png" class="d-block w-100" alt="...">
+            <img src="../assets/img/banner-fructose-min.png" class="d-block w-100" alt="...">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
