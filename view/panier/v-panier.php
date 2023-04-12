@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Votre panier</h1>
-    <table class="table">
+    <table class="table panier-table">
         <thead>
         <tr>
             <th>Nom du produit</th>
