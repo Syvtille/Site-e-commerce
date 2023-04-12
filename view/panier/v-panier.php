@@ -33,6 +33,11 @@
             <th colspan="3">Total</th>
             <th><?= $total ?> €</th>
         </tr>
+
+        <tr>
+            <td colspan="5">
+                <a href="commander/" type="button" class="btn btn-success btn-lg">Valider le panier</a>
+            </td>
         </tfoot>
     </table>
 </div>

@@ -14,9 +14,23 @@ require_once('src/controllers/c-panier.php');
 require_once('src/controllers/c-commander.php');
 require_once('src/controllers/c-paiement.php');
 
+require_once('SDK_exemple/accepte.php');
+require_once('SDK_exemple/refuse.php');
+require_once('SDK_exemple/annule.php');
+
 if(isset($_GET['url']) && $_GET['url']){
     $url = rtrim($_GET['url'], '/');
     switch ($url){
+        case 'accepte':
+            accepte();
+            break;
+        case 'refuse':
+            refuse();
+            break;
+        case 'annule':
+            annule();
+            break;
+
         case 'paiement':
             paiement();
             break;

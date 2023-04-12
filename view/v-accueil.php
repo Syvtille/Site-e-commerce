@@ -67,7 +67,3 @@ global $nomSite;
         <?php endfor; ?>
     </div>
 </div>
-
-<footer>
-    &copy; <?= date("Y"); ?> <?= $nomSite; ?>. Tous droits réservés.
-</footer>

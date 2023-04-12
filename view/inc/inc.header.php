@@ -15,6 +15,14 @@
 
         <ul class="nav nav-pills main-header">
             <li class="nav-item">
+                <a href="commander/" class="nav-link <?php if($page=='commander') echo 'active';?>">
+                    Commander
+                    <span></span><span></span><span></span><span></span>
+                </a>
+                <a href="paiement/" class="nav-link <?php if($page=='paiement') echo 'active';?>">
+                    Paiement
+                    <span></span><span></span><span></span><span></span>
+                </a>
                 <a href="/" class="nav-link <?php if($page=='accueil') echo 'active';?>">
                     Accueil
                     <span></span><span></span><span></span><span></span>

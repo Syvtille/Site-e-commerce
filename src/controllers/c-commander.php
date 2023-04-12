@@ -61,6 +61,6 @@ WHERE id_produit = produit.id AND id_panier=" . $idPanier);
     }
     $pdo->query("DELETE FROM panier WHERE id = $idPanier");
     $pdo->query("DELETE FROM panier_produit WHERE id_panier = $idPanier");
-    header('Location: https://s4-demo3.kevinpecro.info/paiement/');
+    header('Location: https://s4-gp98.kevinpecro.info/paiement/');
     exit;
 }
