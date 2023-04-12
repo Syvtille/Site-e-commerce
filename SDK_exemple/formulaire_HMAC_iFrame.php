@@ -39,15 +39,15 @@ $pbx_retour = 'Mt:M;Ref:R;Auto:A;Erreur:E';
 // mysql_connect...
 // On r�cup�re la cl� secr�te HMAC (stock�e dans une base de donn�es par exemple) et que l�on renseigne dans la variable $hmackey;
 // $hmackey = '4642EDBBDFF9790734E673A9974FC9DD4EF40AA2929925C40B3A95170FF5A578E7D2579D6074E28A78BD07D633C0E72A378AD83D4428B0F3741102B69AD1DBB0';
-$hmackey = 'BA17D491C851E427024E9F3017CE92A9EDC0D79B4E4370FD05B9956F52844F832218444330 AA8C9E4D4123422528B68C166783F75888919DC56C95524A2D6C56';
+$hmackey = 'BA17D491C851E427024E9F3017CE92A9EDC0D79B4E4370FD05B9956F52844F832218444330AA8C9E4D4123422528B68C166783F75888919DC56C95524A2D6C56';
 
 
 // --------------- TESTS DE DISPONIBILITE DES SERVEURS ---------------
 
 $serveurs = array('tpeweb.e-transactions.fr', //serveur primaire
 'tpeweb1.e-transactions.fr'); //serveur secondaire
-$serveurOK = "recette-tpeweb.e-transactions.fr";
-//$serveurOK = "";
+//$serveurOK = "recette-tpeweb.e-transactions.fr";
+$serveurOK = "";
 //phpinfo();
 foreach($serveurs as $serveur){
 $doc = new DOMDocument();
@@ -66,7 +66,7 @@ break;}
 if(!$serveurOK){
 die("Erreur : Aucun serveur n'a �t� trouv�");}
 // Activation de l'univers de recette
-//$serveurOK = 'recette-tpeweb.e-transactions.fr';
+$serveurOK = 'tpeweb.e-transactions.fr';
 
 //Cr�ation de l'url e-Transactions
 $serveurOK = 'https://'.$serveurOK.'/php/';
