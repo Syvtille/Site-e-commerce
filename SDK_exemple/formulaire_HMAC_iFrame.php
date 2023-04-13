@@ -30,10 +30,11 @@ $pbx_effectue = 'https://www.s4-gp98.kevinpecro.info/accepte';
 $pbx_annule = 'https://www.s4-gp98.kevinpecro.info/annule';
 $pbx_refuse = 'https://www.s4-gp98.kevinpecro.info/refuse';
 // Param�trage de l'url de retour back office site
-$pbx_repondre_a = 'https://www.s4-gp98.kevinpecro.info/page-de-back-office-site';
+$pbx_repondre_a = 'https://www.s4-gp98.kevinpecro.info/back-office/';
 
 // Param�trage du retour back office site
-$pbx_retour = 'Mt:M;Ref:R;Auto:A;Erreur:E';
+//$pbx_retour = 'Mt:M;Ref:R;Auto:A;Erreur:E';
+$pbx_retour = 'Mt:M;Ref:R;Auto:A;Appel:T;Abo:B;Reponse:E;Trans:S;Pays:Y;Signature:K;';
 
 // Connection � la base de donn�es
 // mysql_connect...
@@ -107,6 +108,7 @@ $msg = "PBX_SITE=".$pbx_site.
 "&PBX_ANNULE=".$pbx_annule.
 "&PBX_REFUSE=".$pbx_refuse.
 "&PBX_HASH=SHA512".
+"&PBX_RUF1=POST".
 "&PBX_TIME=".$dateTime.
 "&PBX_SHOPPINGCART=".$pbx_shoppingcart.
 "&PBX_BILLING=".$pbx_billing.
@@ -154,6 +156,7 @@ echo "<br><br>";
 <input type="hidden" name="PBX_ANNULE" value="<?php echo $pbx_annule; ?>">
 <input type="hidden" name="PBX_REFUSE" value="<?php echo $pbx_refuse; ?>">
 <input type="hidden" name="PBX_HASH" value="SHA512">
+<input type="hidden" name="PBX_RUF1" value="POST">
 <input type="hidden" name="PBX_TIME" value="<?php echo $dateTime; ?>">
 <input type="hidden" name="PBX_SHOPPINGCART" value="<?php echo htmlspecialchars($pbx_shoppingcart); ?>">
 <input type="hidden" name="PBX_BILLING" value="<?php echo htmlspecialchars($pbx_billing); ?>">

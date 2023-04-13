@@ -7,7 +7,7 @@
 
 ?>
 <div class="container">
-    <header class="d-flex flex-wrap py-3 mb-4 border-bottom">
+    <header class="d-flex flex-wrap py-3 mb-4 border-bottom header-left">
         <a href="/" class="title-site d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
 <!--            <img src="assets/img/logo.png" alt="Logo" class="logo">-->
             <span class="fs-4"><?=$nomSite?></span>

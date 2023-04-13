@@ -23,7 +23,8 @@
                 <td><?= $panierProduit['prix'] ?> €</td>
                 <td><?= $prixTotal ?> €</td>
                 <td>
-                    <a href="panier/<?=$panierProduit['id_produit']?>/" type="button" class="btn btn-danger btn-sm supprimerDuPanier">Supprimer</a>
+                    <a href="panier/<?= $panierProduit['id_produit'] ?>/" type="button"
+                       class="btn btn-danger btn-sm supprimerDuPanier">Supprimer</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -34,10 +35,11 @@
             <th><?= $total ?> €</th>
         </tr>
 
-        <tr>
-            <td colspan="5">
-                <a href="commander/" type="button" class="btn btn-success btn-lg">Valider le panier</a>
-            </td>
+        <!--        <tr>-->
+        <!--            <td colspan="5">-->
+        <!--                <a href="commander/" type="button" class="btn btn-success btn-lg">Valider le panier</a>-->
+        <!--            </td>-->
+        <!--        </tr>-->
         </tfoot>
     </table>
 </div>
