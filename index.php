@@ -13,6 +13,7 @@ require_once('src/controllers/c-produits.php');
 require_once('src/controllers/c-panier.php');
 require_once('src/controllers/c-commander.php');
 require_once('src/controllers/c-paiement.php');
+require_once('src/controllers/c-backoffice.php');
 
 require_once('SDK_exemple/accepte.php');
 require_once('SDK_exemple/refuse.php');
@@ -21,6 +22,9 @@ require_once('SDK_exemple/annule.php');
 if(isset($_GET['url']) && $_GET['url']){
     $url = rtrim($_GET['url'], '/');
     switch ($url){
+        case 'back-office' :
+            paiementBackoffice();
+            break;
         case 'accepte':
             accepte();
             break;
