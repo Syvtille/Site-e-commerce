@@ -4,17 +4,22 @@ require_once('src/model.php');
 
 function paiementBackoffice()
 {
-    try {
-        ob_start();
-        var_dump($_POST);
-        $content = ob_get_clean();
-        ob_end_clean();
-    } catch (Exception $e) {
-        $content = $e->getMessage();
-    }
-    error_log($content);
+    set_insert('paiement', [
+        'id_unique' => $_POST['Ref'],
+        'montant' => $_POST['Mt'],
+        'type_carte' => $_POST['TypeCarte'],
+        'code_reponse' => $_POST['CodeReponse']
+    ]);
 
-    var_dump($_POST['Mt']);
+//    try {
+//        ob_start();
+//        var_dump($_POST);
+//        $content = ob_get_clean();
+//        ob_end_clean();
+//    } catch (Exception $e) {
+//        $content = $e->getMessage();
+//    }
+//    error_log($content);
 
     //modifier $_POST['Mt']; voir la doc
     //exemple : PBX_RETOUR=Mt:M;Ref:R;Auto:A;Appel:T;Abo:B;Reponse:E;Trans:S;Pays:Y;Signature:K;

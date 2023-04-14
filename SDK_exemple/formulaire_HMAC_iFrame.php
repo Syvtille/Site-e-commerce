@@ -34,7 +34,9 @@ $pbx_repondre_a = 'https://www.s4-gp98.kevinpecro.info/back-office/';
 
 // Param�trage du retour back office site
 //$pbx_retour = 'Mt:M;Ref:R;Auto:A;Erreur:E';
-$pbx_retour = 'Mt:M;Ref:R;Auto:A;Appel:T;Abo:B;Reponse:E;Trans:S;Pays:Y;Signature:K;';
+//PBX_RETOUR = Mt:M;Ref:R;Auto:A;Appel:T;Abo:B;ChoixPaiement:P;ChoixCarte:C;Erreur:E;
+//$pbx_retour = 'Mt:M;Ref:R;Auto:A;Appel:T;Abo:B;Reponse:E;Trans:S;Pays:Y;Signature:K;';
+$pbx_retour = 'Mt:M;Ref:R;TypeCarte:C;CodeReponse:E;';
 
 // Connection � la base de donn�es
 // mysql_connect...

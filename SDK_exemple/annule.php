@@ -10,5 +10,7 @@ function annule()
     print ("<br><b>REFERENCE : </b>$ref_com\n");
     print ("<br><b>AUTO : </b>$Auto\n");
     print ("<br><b>code retour : </b>$erreur\n");
+    //mise à jour du statut
+    //mysql_query("UPDATE commande SET statut='annule' WHERE ref_com='$ref_com'");
 }
 ?>
