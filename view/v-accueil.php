@@ -55,7 +55,12 @@ global $nomSite;
                         <p><strong>99.99 €</strong></p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                        <div class="add-cart-container">
+                            <a href="#" class="btn btn-primary button-add-cart">Ajouter au panier</a>
+                            <div class="drip-1"></div>
+                            <div class="drip-2"></div>
+                            <div class="drip-3"></div>
+                        </div>
                         <small>En stock : 10</small>
                     </div>
                     <span class="top"></span>

@@ -177,6 +177,69 @@ header h1 {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFA559' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
 }
 
+.add-cart-container {
+    position: relative;
+    z-index: 51;
+    height: 100px;
+    padding-top: 20px;
+    margin: auto;
+}
+.button-add-cart {
+    font-weight: bold !important;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--color-medium);
+    border: none;
+    text-align: center;
+    transition: .5s ease;
+}
+.button-add-cart:hover {
+    cursor: pointer;
+    background-color: var(--color-light);
+}
+.button-add-cart:hover + .drip-1{
+    /*height: 50px;*/
+    height: 16px;
+}
+.button-add-cart:hover ~ .drip-2{
+    /*height: 90px;*/
+    height: 30px;
+}
+.button-add-cart:hover ~ .drip-3{
+    /*height: 30px;*/
+    height: 10px;
+}
+.drip-1{
+    position:absolute;
+    z-index: 50;
+    width:25px;
+    height:0px;
+    border-radius:0 0 150px 150px;
+    background: var(--color-light);
+    margin: 0px 98px;
+    transition: height 0.3s ease;
+}
+.drip-2{
+    position:absolute;
+    z-index: 50;
+    width:19px;
+    height:0px;
+    border-radius:0 0 21px 21px;
+    background: var(--color-light);
+    margin: 0px 80px;
+    transition: height .75s ease;
+}
+.drip-3{
+    position:absolute;
+    z-index: 50;
+    width:19px;
+    height:0px;
+    border-radius:0 0 21px 21px;
+    background: var(--color-light);
+    margin: 0 23px;
+    transition: height .5s ease;
+}
+
 .banner {
     background-image: url('../../../assets/img/banner.jpg');
     background-size: cover;
@@ -224,6 +287,8 @@ header h1 {
 }
 
 .accueil-card-produit {
+    position: relative;
+    z-index: 1;
     overflow:hidden;
     border-top: 1px solid rgba(255, 49, 49, 0.5);
     border-right: 1px solid rgba(0, 255, 255, 0.5);
