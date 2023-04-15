@@ -180,22 +180,32 @@ header h1 {
 .add-cart-container {
     position: relative;
     z-index: 51;
-    height: 100px;
+    height: 90px;
     padding-top: 20px;
-    margin: auto;
 }
+.button-add-cart:active,
+.button-add-cart:target,
+.button-add-cart:focus,
+.button-add-cart:active:focus,
 .button-add-cart {
+    outline: none !important;
     font-weight: bold !important;
     height: 50px;
     border-radius: 25px;
-    background-color: var(--color-medium);
+    background-color: var(--color-medium) !important;
     border: none;
     text-align: center;
     transition: .5s ease;
+    line-height: 3rem;
+    font-size: 1rem;
+    padding: 0 1.3rem;
+    box-shadow: none;
 }
 .button-add-cart:hover {
     cursor: pointer;
-    background-color: var(--color-light);
+    background-color: var(--color-light) !important;
+    box-shadow: 0 0 10px 0 var(--color-medium);
+    color: var(--color-dark) !important;
 }
 .button-add-cart:hover + .drip-1{
     /*height: 50px;*/
@@ -207,7 +217,7 @@ header h1 {
 }
 .button-add-cart:hover ~ .drip-3{
     /*height: 30px;*/
-    height: 10px;
+    height: 12px;
 }
 .drip-1{
     position:absolute;
@@ -216,7 +226,7 @@ header h1 {
     height:0px;
     border-radius:0 0 150px 150px;
     background: var(--color-light);
-    margin: 0px 98px;
+    margin: 0px 95px;
     transition: height 0.3s ease;
 }
 .drip-2{
@@ -226,7 +236,7 @@ header h1 {
     height:0px;
     border-radius:0 0 21px 21px;
     background: var(--color-light);
-    margin: 0px 80px;
+    margin: 0px 77px;
     transition: height .75s ease;
 }
 .drip-3{
@@ -290,10 +300,10 @@ header h1 {
     position: relative;
     z-index: 1;
     overflow:hidden;
-    border-top: 1px solid rgba(255, 49, 49, 0.5);
-    border-right: 1px solid rgba(0, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(57, 255, 20, 0.5);
-    border-left: 1px solid rgba(255, 255, 113, 0.5);
+    border-top: 1px solid var(--color-light);
+    border-right: 1px solid var(--color-light);
+    border-bottom: 1px solid var(--color-light);
+    border-left: 1px solid var(--color-light);
     margin-bottom: 1rem;
 }
 .accueil-card-produit span {
@@ -487,4 +497,20 @@ a.supprimerDuPanier:hover{
     background-color: var(--color-medium);
     border: none;
     font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .button-add-cart {
+        margin-left: -0.7rem;
+        font-size: 0.85rem;
+        height: 40px;
+        line-height: 2.5rem;
+        padding: 0 1rem;
+    }
+    .drip-1 {
+        margin: 0 88px;
+    }
+    .drip-2 {
+        margin: 0 70px;
+    }
 }
