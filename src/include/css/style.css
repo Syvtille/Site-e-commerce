@@ -1,8 +1,12 @@
 :root {
     --color-dark : #454545;
+    --color-dark-rgb : 69, 69, 69;
     --color-blank : #FFE6C7;
+    --color-blank-rgb : 255, 230, 199;
     --color-light : #FFA559;
+    --color-light-rgb : 255, 165, 89;
     --color-medium : #FF6000;
+    --color-medium-rgb : 255, 96, 0;
 }
 
 html {
@@ -145,6 +149,7 @@ header h1 {
 /* ********************************************************  */
 .carousel-accueil {
     height: 400px !important;
+    box-shadow: 0 0 20px 0 rgba(255, 96, 0, 0.4);
 }
 .carousel-accueil img {
     height: 400px !important;
@@ -297,14 +302,14 @@ header h1 {
 }
 
 .accueil-card-produit {
+    background-color: rgba(var(--color-blank-rgb), 0.5);
+    border-radius: 10px;
+    border: 2px solid rgba(var(--color-dark-rgb), 0.2);
     position: relative;
     z-index: 1;
     overflow:hidden;
-    border-top: 1px solid var(--color-light);
-    border-right: 1px solid var(--color-light);
-    border-bottom: 1px solid var(--color-light);
-    border-left: 1px solid var(--color-light);
     margin-bottom: 1rem;
+    height: 600px;
 }
 .accueil-card-produit span {
     position: absolute;
@@ -318,10 +323,10 @@ header h1 {
     background: linear-gradient(
             90deg,
             transparent 50%,
-            rgba(255, 49, 49, 0.5),
-            rgb(255, 49, 49)
+            rgba(var(--color-light-rgb), 0.5),
+            rgb(var(--color-light-rgb))
     );
-    animation: animateTop 3s ease-in-out infinite;
+    animation: animateTop 7s ease-in-out infinite;
 }
 .bottom {
     right: 0;
@@ -329,11 +334,11 @@ header h1 {
     height: 5px;
     background: linear-gradient(
             90deg,
-            rgb(57, 255, 20),
-            rgba(57, 255, 20, 0.5),
+            rgba(var(--color-light-rgb), 0.5),
+            rgb(var(--color-light-rgb)),
             transparent 50%
     );
-    animation: animateBottom 3s ease-in-out infinite;
+    animation: animateBottom 7s ease-in-out infinite;
 }
 .right {
     top: 0;
@@ -343,10 +348,10 @@ header h1 {
     background: linear-gradient(
             180deg,
             transparent 30%,
-            rgba(0, 255, 255, 0.5),
-            rgb(0, 255, 255)
+            rgba(var(--color-light-rgb), 0.5),
+            rgb(var(--color-light-rgb))
     );
-    animation: animateRight 3s ease-in-out infinite;
+    animation: animateRight 7s ease-in-out infinite;
 }
 .left {
     left: 0;
@@ -355,11 +360,11 @@ header h1 {
     height: 0;
     background: linear-gradient(
             180deg,
-            rgb(255, 255, 113),
-            rgba(255, 255, 113, 0.5),
+            rgba(var(--color-light-rgb), 0.5),
+            rgb(var(--color-light-rgb)),
             transparent 70%
     );
-    animation: animateLeft 3s ease-in-out infinite;
+    animation: animateLeft 7s ease-in-out infinite;
 }
 @keyframes animateTop {
     25% {
@@ -421,30 +426,25 @@ header h1 {
     }
 }
 
-.card {
-    border: none;
-    background-color: #f8f9fa;
-}
-
-.card:hover {
+.accueil-card-produit:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card img {
+.accueil-card-produit img {
     width: 100%;
     height: auto;
 }
 
-.card-title {
+.accueil-card-produit .card-title {
     font-size: 18px;
     font-weight: bold;
 }
 
-.card-text {
+.accueil-card-produit .card-text {
     color: #333;
 }
 
-.card-footer {
+.accueil-card-produit .card-footer {
     background-color: inherit;
     border-top: none;
     display: flex;
@@ -456,6 +456,21 @@ footer {
     background-color: #333;
     color: white;
     padding: 1rem;
+    text-align: center;
+}
+
+
+/* PRODUIT */
+.produit-container{
+
+}
+.produit-container img {
+    width: 100%;
+    height: auto;
+}
+.produit-container .col{
+}
+.produit-nom{
     text-align: center;
 }
 

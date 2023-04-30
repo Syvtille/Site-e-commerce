@@ -5,8 +5,6 @@ global $nomSite;
 <!--<div class="banner">-->
 <!--    <h2>Bienvenue sur --><?php //= $nomSite; ?><!-- !</h2>-->
 <!--</div>-->
-
-<!--carousel-->
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -44,26 +42,25 @@ global $nomSite;
 
 <div class="container">
     <h1>Produits populaires</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
-        <?php for ($i = 0; $i < 6; $i++): ?>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3 .produits-populaires">
+        <?php foreach($lstProduits as $unProduits): ?>
             <div class="col">
                 <div class="card accueil-card-produit">
-                    <img src="assets/img/product-sample.jpg" alt="Product Name">
+                    <img src="assets/img/<?=$unProduits['image']?>" alt="<?=$unProduits['nom']?>">
                     <div class="card-body">
-                        <h5 class="card-title">Nom du produit</h5>
-                        <p class="card-text">Description du produit</p>
-                        <p><strong>99.99 €</strong></p>
+                        <h5 class="card-title"><?=$unProduits['nom']?></h5>
+                        <p><strong><?=$unProduits['prix']?> €</strong></p>
                     </div>
                     <div class="card-footer">
                         <div class="add-cart-container">
-                            <a href="#" class="btn btn-primary button-add-cart">
+                            <a href="produits/<?=$unProduits['identifiant']?>/" class="btn btn-primary button-add-cart">
                                 <p>Ajouter au panier</p>
                             </a>
                             <div class="drip-1"></div>
                             <div class="drip-2"></div>
                             <div class="drip-3"></div>
                         </div>
-                        <small>En stock : 10</small>
+                        <small>En stock : <?=$unProduits['stock']?></small>
                     </div>
                     <span class="top"></span>
                     <span class="right"></span>
@@ -71,6 +68,6 @@ global $nomSite;
                     <span class="left"></span>
                 </div>
             </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
     </div>
 </div>
