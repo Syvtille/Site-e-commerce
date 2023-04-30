@@ -6,7 +6,7 @@
     <div class="produit-nom col-12">
         <h5 class="card-title"><?= $unProduits['nom'] ?></h5>
     </div>
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 col-12">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 col-12">
         <div class="col">
             <img src="assets/img/<?= $unProduits['image'] ?>" alt="<?= $unProduits['nom'] ?>">
         </div>
@@ -19,8 +19,11 @@
                            max="<?= $unProduits['stock'] ?>">
                 </div>
                 <input type="hidden" name="id_produit" value="<?= $unProduits['id'] ?>">
-                <div class="">
-                    <input type="submit" value="Ajouter au panier" class="btn btn-primary" name="ajouter_panier">
+                <div class="add-cart-container">
+                    <input type="submit" value="Ajouter au panier" class="btn btn-primary button-add-cart" name="ajouter_panier">
+                    <div class="drip-1"></div>
+                    <div class="drip-2"></div>
+                    <div class="drip-3"></div>
                 </div>
             </form>
         </div>

@@ -462,7 +462,10 @@ footer {
 
 /* PRODUIT */
 .produit-container{
-
+    background-color: rgba(var(--color-blank-rgb), 0.5);
+    border-radius: 10px;
+    border: 2px solid rgba(var(--color-dark-rgb), 0.2);
+    margin-bottom: 2rem;
 }
 .produit-container img {
     width: 100%;
@@ -511,7 +514,6 @@ a.supprimerDuPanier {
 a.supprimerDuPanier:hover{
     background-color: var(--color-medium);
     border: none;
-    font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
