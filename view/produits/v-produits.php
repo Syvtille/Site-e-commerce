@@ -4,7 +4,7 @@
 
 <div class="container produit-container">
     <div class="produit-nom col-12">
-        <h5 class="card-title"><?= $unProduits['nom'] ?></h5>
+        <h4 class="card-title"><?= $unProduits['nom'] ?></h4>
     </div>
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 col-12">
         <div class="col">
@@ -15,7 +15,7 @@
             <form class="col" method="post">
                 <div class="">
                     <label for="quantite">Quantité</label>
-                    <input type="number" name="produit_quantite" id="quantite" class="form-control" value="1" min="1"
+                    <input type="number" name="produit_quantite" id="quantite" class="quantite-input form-control" value="1" min="1"
                            max="<?= $unProduits['stock'] ?>">
                 </div>
                 <input type="hidden" name="id_produit" value="<?= $unProduits['id'] ?>">
