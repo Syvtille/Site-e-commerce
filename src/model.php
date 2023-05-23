@@ -47,6 +47,29 @@ function set_insert($table, $data)
     $stmt = $pdo->query($requete);
     return $pdo->lastInsertId();
 }
+//function set_insert($table, $data)
+//{
+//    global $pdo;
+//
+//    try {
+//        $keys = array_keys($data);
+//        $fields = implode(",", $keys);
+//        $placeholders = ":".implode(",:", $keys);
+//
+//        $stmt = $pdo->prepare("INSERT INTO $table ($fields) VALUES ($placeholders)");
+//
+//        foreach ($data as $key => $value) {
+//            $stmt->bindValue(':'.$key, $value);
+//        }
+//        $stmt->execute();
+//        return $pdo->lastInsertId();
+//    } catch (PDOException $e) {
+//        error_log("Erreur lors de l'insertion dans la base de données : " . $e->getMessage());
+//        //peut-être rediriger vers page erreur
+//        return false;
+//    }
+//}
+
 
 function set_delete($table, $date){
     global $pdo;
