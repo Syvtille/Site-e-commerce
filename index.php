@@ -56,6 +56,9 @@ if(isset($_GET['url']) && $_GET['url']){
         case 'c-test-produit':
             testProduit();
             break;
+        case 'c-test-delete':
+            testDelete();
+            break;
 
         default:
             accueil();

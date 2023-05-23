@@ -2,8 +2,7 @@
 
 require_once('src/model.php');
 
-function testProduit()
-{
+function testDelete(){
     $lstProduits = get_results("SELECT * FROM produit");
 
     $idMax = max(array_column($lstProduits, 'id'));
@@ -14,15 +13,13 @@ function testProduit()
     $lstTests = array();
 
     foreach ($lstProduits as $unProduit) {
-        $quantite = rand(1, 10);
-        $test = ajouterAuPanier($unProduit['id'], $quantite);
+        $test = deleteFromCart($unProduit['id']);
         $lstTests[] = array(
             "idProduit" => $unProduit['id'],
             "nom" => $unProduit['nom'],
-            "quantite" => $quantite,
             "result" => $test
         );
     }
 
-    require('view/test/v-test-produit.php');
+    require('view/test/v-test-delete.php');
 }
