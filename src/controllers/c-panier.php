@@ -18,8 +18,8 @@ function deleteFromCart($idProduit)
                 $valuesBdd = array(
                     "id" => $unPanierProduit['id']
                 );
-                $idDelete = set_delete("panier_produit", $valuesBdd);
-                if ($idDelete) return 1;
+                $rowCountDelete = set_delete("panier_produit", $valuesBdd);
+                if ($rowCountDelete) return 1;
                 else return 0;
             }
         }else return 0;

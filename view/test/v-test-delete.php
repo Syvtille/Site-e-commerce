@@ -1,6 +1,6 @@
 <?php
 echo "<table border='1'>";
-echo "<tr><th>id</th><th>nom</th><th>quantite</th><th>result</th></tr>";
+echo "<tr><th>id</th><th>nom</th><th>result</th></tr>";
 foreach ($lstTests as $unTest) {
     echo "<tr>";
     echo "<td>" . $unTest['idProduit'] . "</td>";

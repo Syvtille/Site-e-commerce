@@ -16,6 +16,7 @@ require_once('src/controllers/c-paiement.php');
 require_once('src/controllers/c-backoffice.php');
 
 require_once('src/controllers/test/c-test-produit.php');
+require_once('src/controllers/test/c-test-delete.php');
 
 require_once('SDK_exemple/accepte.php');
 require_once('SDK_exemple/refuse.php');

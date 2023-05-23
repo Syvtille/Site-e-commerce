@@ -86,6 +86,7 @@ function set_delete($table, $date){
     }
     $requete = "DELETE FROM $table WHERE $requete";
     $stmt = $pdo->query($requete);
+    return $stmt->rowCount();
 }
 
 ?>

@@ -2,7 +2,8 @@
 
 require_once('src/model.php');
 
-function testDelete(){
+function testDelete()
+{
     $lstProduits = get_results("SELECT * FROM produit");
 
     $idMax = max(array_column($lstProduits, 'id'));
