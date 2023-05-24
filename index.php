@@ -19,6 +19,8 @@ require_once('src/controllers/test/c-test-produit.php');
 require_once('src/controllers/test/c-test-delete.php');
 
 require_once('src/controllers/api/api-liste.php');
+require_once('src/controllers/api/api-commande.php');
+require_once('src/controllers/api/api-paiement.php');
 
 require_once('SDK_exemple/accepte.php');
 require_once('SDK_exemple/refuse.php');
