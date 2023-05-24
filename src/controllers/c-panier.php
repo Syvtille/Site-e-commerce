@@ -8,8 +8,7 @@ function deleteFromCart($idProduit)
     try {
         $unUser = get_result("select * from client where id=$idUser");
         $unProduit = get_result("select * from produit where id=$idProduit");
-        $panier = get_result("SELECT id FROM panier WHERE id_client = $idUser");
-        $idPanier = $panier['id'];
+        $idPanier = get_result("SELECT id FROM panier WHERE id_client = $idUser")['id'];
         $inPanier = get_result("SELECT * FROM panier_produit WHERE id_panier = $idPanier AND id_produit = $idProduit");
 
         if ($unUser && $unProduit && $inPanier) {
