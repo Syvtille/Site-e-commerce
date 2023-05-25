@@ -1,5 +1,7 @@
 <?php
 
+$urlRequete = 'https://s4-gp98.kevinpecro.info/api/';
+
 require_once('src/controllers/c-liste.php');
 require_once('src/controllers/c-commande.php');
 require_once('src/controllers/c-paiement.php');

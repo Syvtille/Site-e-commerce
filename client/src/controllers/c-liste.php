@@ -1,6 +1,10 @@
 <?php
 
+require_once('src/model.php');
+
 function liste(){
+
+    appelApi('liste');
 
     $menu['page'] = "liste";
 
