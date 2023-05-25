@@ -3,11 +3,12 @@
 function appelApi($what = null, $params = [])
 {
     global $urlRequete;
+    $token = 'WTIyM3Nv';
 
     $urlRequete .= $what . '/';
 
     $data = array(
-        'token' => 'WTIyM3Nv',
+        'token' => $token
     );
     if ($params) {
         foreach ($params as $key => $value) {
@@ -22,13 +23,6 @@ function appelApi($what = null, $params = [])
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
     $response = curl_exec($curl);
-
-//    if ($response === false) {
-//        echo 'Erreur Curl : ' . curl_error($curl);
-//    } else {
-//        echo 'Réponse du serveur : ' . $response;
-//    }
-
     curl_close($curl);
 
     return $response;
