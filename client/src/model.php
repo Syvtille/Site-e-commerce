@@ -23,11 +23,13 @@ function appelApi($what = null, $params = [])
 
     $response = curl_exec($curl);
 
-    if ($response === false) {
-        echo 'Erreur Curl : ' . curl_error($curl);
-    } else {
-        echo 'Réponse du serveur : ' . $response;
-    }
+//    if ($response === false) {
+//        echo 'Erreur Curl : ' . curl_error($curl);
+//    } else {
+//        echo 'Réponse du serveur : ' . $response;
+//    }
 
     curl_close($curl);
+
+    return $response;
 }

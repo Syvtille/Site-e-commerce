@@ -4,7 +4,9 @@ require_once('src/model.php');
 
 function liste(){
 
-    appelApi('liste');
+    $reponse = appelApi('liste');
+
+    $lstApi = json_decode($reponse, true);
 
     $menu['page'] = "liste";
 

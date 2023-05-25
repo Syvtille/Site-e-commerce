@@ -2,6 +2,7 @@
     global $urlSiteClient;
 ?>
 <div id="mySidebar" class="sidebar">
+    <h2 class="sidebar-title">Client</h2>
     <a href=<?=$urlSiteClient . "liste/";?>>Liste</a>
     <a href=<?=$urlSiteClient . "commande/";?>>Commande</a>
     <a href=<?=$urlSiteClient . "paiement/";?>>Paiement</a>
