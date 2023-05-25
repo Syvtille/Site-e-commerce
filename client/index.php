@@ -1,6 +1,7 @@
 <?php
 
 $urlRequete = 'https://s4-gp98.kevinpecro.info/api/';
+$urlSiteClient = 'https://s4-gp98.kevinpecro.info/client/';
 
 require_once('src/controllers/c-liste.php');
 require_once('src/controllers/c-commande.php');

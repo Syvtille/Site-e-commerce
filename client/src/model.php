@@ -8,8 +8,12 @@ function appelApi($what = null, $params = [])
 
     $data = array(
         'token' => 'WTIyM3Nv',
-        $params[0] => $params[1],
     );
+    if ($params) {
+        foreach ($params as $key => $value) {
+            $data[$key] = $value;
+        }
+    }
 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $urlRequete);
