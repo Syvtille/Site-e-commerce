@@ -22,6 +22,8 @@ require_once('src/controllers/api/api-liste.php');
 require_once('src/controllers/api/api-commande.php');
 require_once('src/controllers/api/api-paiement.php');
 
+require_once('src/controllers/c-test-service.php');
+
 require_once('SDK_exemple/accepte.php');
 require_once('SDK_exemple/refuse.php');
 require_once('SDK_exemple/annule.php');
@@ -29,6 +31,9 @@ require_once('SDK_exemple/annule.php');
 if (isset($_GET['url']) && $_GET['url']) {
     $url = rtrim($_GET['url'], '/');
     switch ($url) {
+        case 'test-service':
+            testService();
+            break;
         case 'back-office' :
             paiementBackoffice();
             break;
