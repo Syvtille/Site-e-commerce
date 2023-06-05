@@ -25,28 +25,28 @@ function testService()
 
         $response = curl_exec($ch);
 
-        // Retourner l'objet cURL au lieu de la réponse
-        return $ch;
+        // Retourner à la fois l'objet cURL et la réponse JSON
+        return [$ch, $response];
     }
 
     foreach ($urls as $url) {
         // Cas où on utilise la méthode GET
-        $chGet = makeRequest($url, 'GET');
+        [$chGet, $responseGet] = makeRequest($url, 'GET');
         $httpCodeGet = curl_getinfo($chGet, CURLINFO_HTTP_CODE);
         echo "GET - $url : $httpCodeGet\n";
-        saveApiTestResult($url, 'GET', $httpCodeGet);
+        saveApiTestResult($url, 'GET', $httpCodeGet, $responseGet);
 
         // Cas où on utilise la méthode POST avec un mauvais token
-        $chPostBadToken = makeRequest($url, 'POST', 'mauvais_token');
+        [$chPostBadToken, $responsePostBadToken] = makeRequest($url, 'POST', 'mauvais_token');
         $httpCodePostBadToken = curl_getinfo($chPostBadToken, CURLINFO_HTTP_CODE);
         echo "POST (mauvais token) - $url : $httpCodePostBadToken\n";
-        saveApiTestResult($url, 'POST', $httpCodePostBadToken);
+        saveApiTestResult($url, 'POST', $httpCodePostBadToken, $responsePostBadToken);
 
         // Cas où on utilise la méthode POST avec le bon token
-        $chPostGoodToken = makeRequest($url, 'POST', 'WTIyM3Nv');
+        [$chPostGoodToken, $responsePostGoodToken] = makeRequest($url, 'POST', 'WTIyM3Nv');
         $httpCodePostGoodToken = curl_getinfo($chPostGoodToken, CURLINFO_HTTP_CODE);
         echo "POST (bon token) - $url : $httpCodePostGoodToken\n";
-        saveApiTestResult($url, 'POST', $httpCodePostGoodToken);
+        saveApiTestResult($url, 'POST', $httpCodePostGoodToken, $responsePostGoodToken);
 
         // Fermer les objets cURL
         curl_close($chGet);
@@ -57,7 +57,7 @@ function testService()
     }
 }
 
-function saveApiTestResult($url, $method, $httpCode)
+function saveApiTestResult($url, $method, $httpCode, $response)
 {
     $dateHeure = date('Y-m-d H:i:s');
     $data = [
@@ -65,7 +65,7 @@ function saveApiTestResult($url, $method, $httpCode)
         'date_heure' => $dateHeure,
         'code_erreur' => $httpCode,
         'methode' => $method,
-        'json' => '' // Remplacer cette valeur avec les données JSON à enregistrer si nécessaire
+        'json' => $response
     ];
 
     set_insert('test_api', $data);
