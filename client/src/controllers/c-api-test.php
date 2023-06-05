@@ -4,7 +4,7 @@ require_once('src/model.php');
 
 function apiTest(){
 
-    $idTest = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : null;
+    $idTest = (isset($_GET['identifiant']) && $_GET['identifiant']) ? $_GET['identifiant'] : null;
 
     $menu['page'] = "api-test";
 
