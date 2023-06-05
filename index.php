@@ -21,6 +21,7 @@ require_once('src/controllers/test/c-test-delete.php');
 require_once('src/controllers/api/api-liste.php');
 require_once('src/controllers/api/api-commande.php');
 require_once('src/controllers/api/api-paiement.php');
+require_once('src/controllers/api/api-test.php');
 
 require_once('src/controllers/c-test-service.php');
 
@@ -77,6 +78,9 @@ if (isset($_GET['url']) && $_GET['url']) {
 } elseif (isset($_GET['urlAPI']) && $_GET['urlAPI']) {
     $url = rtrim($_GET['urlAPI'], '/');
     switch ($url) {
+        case 'api-test':
+            apiTest();
+            break;
         case 'commande':
             apiCommande();
             break;

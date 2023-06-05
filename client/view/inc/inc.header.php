@@ -6,7 +6,7 @@
     <a href=<?=$urlSiteClient . "liste/";?>>Liste</a>
     <a href=<?=$urlSiteClient . "commande/";?>>Commande</a>
     <a href=<?=$urlSiteClient . "paiement/";?>>Paiement</a>
-    <a href=<?=$urlSiteClient . "test/";?>>Test</a>
+    <a href=<?=$urlSiteClient . "api-test/";?>>Test</a>
     <div class="myName">
         <p>Escande Florian</p>
     </div>
