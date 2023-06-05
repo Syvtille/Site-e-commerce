@@ -34,16 +34,19 @@ function testService()
         $chGet = makeRequest($url, 'GET');
         $httpCodeGet = curl_getinfo($chGet, CURLINFO_HTTP_CODE);
         echo "GET - $url : $httpCodeGet\n";
+        saveApiTestResult($url, 'GET', $httpCodeGet);
 
         // Cas où on utilise la méthode POST avec un mauvais token
         $chPostBadToken = makeRequest($url, 'POST', 'mauvais_token');
         $httpCodePostBadToken = curl_getinfo($chPostBadToken, CURLINFO_HTTP_CODE);
         echo "POST (mauvais token) - $url : $httpCodePostBadToken\n";
+        saveApiTestResult($url, 'POST', $httpCodePostBadToken);
 
         // Cas où on utilise la méthode POST avec le bon token
         $chPostGoodToken = makeRequest($url, 'POST', 'WTIyM3Nv');
         $httpCodePostGoodToken = curl_getinfo($chPostGoodToken, CURLINFO_HTTP_CODE);
         echo "POST (bon token) - $url : $httpCodePostGoodToken\n";
+        saveApiTestResult($url, 'POST', $httpCodePostGoodToken);
 
         // Fermer les objets cURL
         curl_close($chGet);
@@ -52,5 +55,18 @@ function testService()
 
         echo "\n";
     }
+}
 
+function saveApiTestResult($url, $method, $httpCode)
+{
+    $dateHeure = date('Y-m-d H:i:s');
+    $data = [
+        'url' => $url,
+        'date_heure' => $dateHeure,
+        'code_erreur' => $httpCode,
+        'methode' => $method,
+        'json' => '' // Remplacer cette valeur avec les données JSON à enregistrer si nécessaire
+    ];
+
+    set_insert('test_api', $data);
 }
