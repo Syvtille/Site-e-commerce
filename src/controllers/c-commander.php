@@ -4,8 +4,7 @@ function commander()
 {
     global $idUser;
     if (isset($_POST['fac_nom']) && $_POST['fac_nom']) {
-        $unPanier = get_result("SELECT * FROM panier WHERE id_client =
-$idUser");
+        $unPanier = get_result("SELECT * FROM panier WHERE id_client = $idUser");
         $idPanier = $unPanier['id'];
         saveCommande($idUser, $idPanier);
     }

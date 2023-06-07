@@ -527,6 +527,8 @@ p.accueil-prix-produit strong{
 
 
 /* PANIER */
+.validate-cart-btn{
+}
 .panier-table {
     background-color: #f8f9fa;
     border-radius: 10px;
