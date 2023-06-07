@@ -1,7 +1,6 @@
 <?php
     global $nomSite;
 ?>
-!DOCTYPE html>
 <html lang="fr">
 <head>
     <base href="/">

@@ -1,3 +1,3 @@
-<?php
-var_dump($unPost);
-?>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, diam vel luctus tristique, tortor metus porttitor leo, in porta dui libero et orci. Proin finibus nisl enim, at dignissim leo cursus ac. Donec mollis cursus suscipit. Maecenas mollis enim id velit consequat maximus. Maecenas nec leo cursus, fermentum augue vitae, rhoncus justo. Curabitur nibh nunc, consectetur in nisl quis, sollicitudin venenatis velit. Curabitur varius enim quis accumsan gravida. Maecenas vulputate sapien ut nisl porta, sed feugiat mi venenatis. In ligula massa, vestibulum sit amet mollis quis, auctor et felis.
+</p>

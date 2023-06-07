@@ -550,6 +550,7 @@ p.accueil-prix-produit strong{
     border-radius: 10px;
 }
 a.supprimerDuPanier {
+    width: 100%;
     background-color: var(--color-light);
     color: white;
     border: none;
