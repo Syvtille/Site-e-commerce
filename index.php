@@ -49,7 +49,7 @@ if (isset($_GET['url']) && $_GET['url']) {
             break;
 
         case 'paiement':
-            paiement();
+            paiement(1, 1);
             break;
         case 'commander':
             commander();
