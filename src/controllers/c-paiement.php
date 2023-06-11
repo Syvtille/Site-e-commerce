@@ -48,6 +48,7 @@ function paiement($total, $idCommande){
     $pbx_annule = 'https://www.s4-gp98.kevinpecro.info/annule';
     $pbx_refuse = 'https://www.s4-gp98.kevinpecro.info/refuse';
     // Param�trage de l'url de retour back office site
+//    $pbx_repondre_a = 'https://www.s4-gp98.kevinpecro.info/back-office/' . $idCommande . '/';
     $pbx_repondre_a = 'https://www.s4-gp98.kevinpecro.info/back-office/';
 
     $dateTime = date("c");
