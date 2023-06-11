@@ -8,7 +8,8 @@ function paiementBackoffice()
         'id_unique' => $_POST['Ref'],
         'montant' => $_POST['Mt'],
         'type_carte' => $_POST['TypeCarte'],
-        'code_reponse' => $_POST['CodeReponse']
+        'code_reponse' => $_POST['CodeReponse'],
+        'date_paiement' => date('Y-m-d H:i:s')
     ]);
 
 //    try {
