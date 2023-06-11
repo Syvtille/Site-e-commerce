@@ -35,6 +35,10 @@ body {
     color: #f1f1f1;
 }
 
+.sidebar a.active {
+    color: #f1f1f1;
+}
+
 .sidebar .myName {
     position: absolute;
     bottom: 20px;

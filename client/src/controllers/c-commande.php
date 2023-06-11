@@ -4,9 +4,9 @@ require_once('src/model.php');
 
 function commande(){
 
-    $idCommande = (isset($_GET['identifiant']) && $_GET['identifiant']) ? $_GET['identifiant'] : null;
-
     $menu['page'] = "commande";
+
+    $idCommande = (isset($_GET['identifiant']) && $_GET['identifiant']) ? $_GET['identifiant'] : null;
 
     include('view/inc/inc.head.php');
     include('view/inc/inc.header.php');
