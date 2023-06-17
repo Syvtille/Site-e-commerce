@@ -14,6 +14,7 @@ function apiCommande(){
         $data = getCommande();
     }
     $data = addTotal($data);
+    $data = addProduits($data);
     echo json_encode($data);
 }
 
@@ -28,6 +29,20 @@ function addTotal($commandes)
         endforeach;
 
         $commande['total'] = $total;
+    endforeach;
+
+    return $commandes;
+}
+
+function addProduits($commandes)
+{
+    foreach($commandes as &$commande): // référence (&) pour modifier l'élément dans le tableau
+        $produits = get_results("SELECT cp.id_produit, cp.quantite, p.nom, p.image
+                                           FROM commande_produit cp
+                                             INNER JOIN produit p ON cp.id_produit = p.id
+                                        WHERE cp.id_commande = ".$commande['id']);
+
+        $commande['produits'] = $produits;
     endforeach;
 
     return $commandes;
