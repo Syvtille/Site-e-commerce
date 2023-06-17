@@ -3,7 +3,7 @@
 <?php
 global $urlSiteClient;
 echo "<table class='table table-striped'>";
-echo "<thead class='thead-dark'><tr><th>ID</th><th>Montant</th><th>Date</th><th>Référence</th></tr></thead>";
+echo "<thead class='thead-dark'><tr><th>ID</th><th>Montant</th><th>Date</th><th>Référence</th><th>Action</th></tr></thead>";
 echo "<tbody>";
 
 $lstApi = array_reverse($lstApi);
