@@ -3,8 +3,10 @@
 <?php
 global $urlSiteClient;
 echo "<table class='table table-striped'>";
-echo "<thead class='thead-dark'><tr><th>ID</th><th>ID Client</th><th>Nom</th><th>Prenom</th><th>Email</th><th>Statut</th><th>Action</th></tr></thead>";
+echo "<thead class='thead-dark'><tr><th>ID</th><th>ID Client</th><th>Nom</th><th>Prenom</th><th>Email</th><th>Total</th><th>Statut</th><th>Action</th></tr></thead>";
 echo "<tbody>";
+
+$lstApi = array_reverse($lstApi);
 
 foreach ($lstApi as $commande) {
     echo "<tr>";
@@ -13,6 +15,7 @@ foreach ($lstApi as $commande) {
     echo "<td>" . $commande['nom'] . "</td>";
     echo "<td>" . $commande['prenom'] . "</td>";
     echo "<td>" . $commande['email'] . "</td>";
+    echo "<td>" . $commande['total'] . "€</td>";
     echo "<td>" . ($commande['statut'] ? 'Active' : 'Inactive') . "</td>";
     echo '<td><a href="'.$urlSiteClient . 'commande/' . $commande['id'] . '/" class="btn btn-info">Voir Détails</a></td>';
     echo "</tr>";

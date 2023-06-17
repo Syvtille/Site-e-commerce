@@ -8,12 +8,32 @@ function apiCommande(){
     authApi();
 
     if(isset($_POST['idCommande'])){
-        echo json_encode(getCommande($_POST['idCommande']));
+        $data = getCommande($_POST['idCommande']);
+        $data = addTotal($data);
+        echo json_encode($data);
     }
     else{
-        echo json_encode(getCommande());
+        $data = getCommande();
+        $data = addTotal($data);
+        echo json_encode($data);
     }
 
+}
+
+function addTotal($commandes)
+{
+    foreach($commandes as &$commande): // référence (&) pour modifier l'élément dans le tableau
+        $totalCommande = get_results("SELECT * FROM commande_produit WHERE id_commande = " . $commande['id']);
+
+        $total = 0;
+        foreach ($totalCommande as $item):
+            $total += $item['quantite'] * $item['prix_unitaire'];
+        endforeach;
+
+        $commande['total'] = $total;
+    endforeach;
+
+    return $commandes;
 }
 
 function getCommande($idCommande = null)
