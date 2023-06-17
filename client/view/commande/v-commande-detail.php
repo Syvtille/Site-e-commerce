@@ -1,6 +1,30 @@
 <h1>Détails de la Commande</h1>
 
+<div class="col-md-12">
+    <div class="product-details mr-2">
+        <hr>
+        <h3 class='thead-dark mb-0'>Récapitulatif</h3>
+        <table class='table table-striped'>
+            <thead class='thead-dark'><tr><th>Nom</th><th>Image</th><th>Quantité</th></tr></thead>
+            <tbody>
+            <?php
+            foreach ($lstApi["produits"] as $item):
+                ?>
+                <tr>
+                    <td><?= $item['nom'] ?></td>
+                    <td><img class="rounded" src="../assets/img/<?= $item['image'] ?>" width="100"></td>
+                    <td><?= $item['quantite'] ?></td>
+                </tr>
+            <?php
+            endforeach;
+            ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <?php
+echo "<h3 class='thead-dark mb-0'>Informations</h3>";
 echo "<table class='table table-striped'>";
 echo "<thead class='thead-dark'><tr><th>Clé</th><th>Valeur</th></tr></thead>";
 echo "<tbody>";
@@ -8,6 +32,11 @@ echo "<tbody>";
 foreach ($lstApi as $key => $value) {
     echo "<tr>";
     echo "<td>" . $key . "</td>";
+    if ($key == "total") {
+        echo "<td>" . $value . "€</td>";
+        echo "</tr>";
+        break;
+    }
     echo "<td>" . $value . "</td>";
     echo "</tr>";
 }
@@ -16,20 +45,4 @@ echo "</tbody>";
 echo "</table>";
 ?>
 
-<div class="product-details mr-2">
-    <hr>
-    <h6 class="mb-0">Récapitulatif</h6>
-    <?php
-    foreach($lstApi["produits"] as $item):
-        ?>
-        <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
-            <div class="d-flex flex-row"><img class="rounded" src="<?=$item['image'] ?>" width="40">
-                <div class="ml-2"><span class="font-weight-bold d-block"><?=$item['nom'] ?></span></div>
-            </div>
-            <div class="d-flex flex-row align-items-center"><span class="d-block">Quantité : <?=$item['quantite'] ?></span></div>
-        </div>
-    <?php
-    endforeach;
-    ?>
-</div>
 

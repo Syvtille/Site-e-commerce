@@ -9,12 +9,12 @@ function apiCommande(){
 
     if(isset($_POST['idCommande'])){
         $data = getCommande($_POST['idCommande']);
+        $data = addProduits($data);
     }
     else{
         $data = getCommande();
     }
     $data = addTotal($data);
-    $data = addProduits($data);
     echo json_encode($data);
 }
 
