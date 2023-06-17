@@ -9,15 +9,12 @@ function apiCommande(){
 
     if(isset($_POST['idCommande'])){
         $data = getCommande($_POST['idCommande']);
-        $data = addTotal($data);
-        echo json_encode($data);
     }
     else{
         $data = getCommande();
-        $data = addTotal($data);
-        echo json_encode($data);
     }
-
+    $data = addTotal($data);
+    echo json_encode($data);
 }
 
 function addTotal($commandes)
@@ -39,7 +36,7 @@ function addTotal($commandes)
 function getCommande($idCommande = null)
 {
     if($idCommande){
-        return get_result("SELECT * FROM commande WHERE id = $idCommande");
+        return get_results("SELECT * FROM commande WHERE id = $idCommande");
     }
     else{
         return get_results("SELECT * FROM commande");

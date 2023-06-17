@@ -19,6 +19,7 @@ function commande(){
     else {
         $reponse = appelApi('commande', ['idCommande' => $idCommande]);
         $lstApi = json_decode($reponse, true);
+        $lstApi = $lstApi[0];
         include('view/commande/v-commande-detail.php');
     }
 
