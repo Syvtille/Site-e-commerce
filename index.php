@@ -25,9 +25,9 @@ require_once('src/controllers/api/api-test.php');
 
 require_once('src/controllers/c-test-service.php');
 
-require_once('SDK_exemple/accepte.php');
-require_once('SDK_exemple/refuse.php');
-require_once('SDK_exemple/annule.php');
+require_once('src/paiement-result/accepte.php');
+require_once('src/paiement-result/refuse.php');
+require_once('src/paiement-result/annule.php');
 
 if (isset($_GET['url']) && $_GET['url']) {
     $url = rtrim($_GET['url'], '/');
