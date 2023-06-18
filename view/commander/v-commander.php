@@ -30,7 +30,7 @@
             <div class="mb-3">
                 <label for="fac_complement" class="formlabel">Complément</label>
                 <input type="text" class="form-control"
-                       name="fac_complement" required>
+                       name="fac_complement">
             </div>
             <div class="mb-3">
                 <label for="fac_code_postal" class="form-label">Code
@@ -74,7 +74,7 @@
             <div class="mb-3">
                 <label for="liv_complement" class="formlabel">Complément</label>
                 <input type="text" class="form-control"
-                       name="liv_complement" required>
+                       name="liv_complement">
             </div>
             <div class="mb-3">
                 <label for="liv_code_postal" class="form-label">Code

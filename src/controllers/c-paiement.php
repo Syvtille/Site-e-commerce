@@ -58,7 +58,7 @@ function paiement($total, $idCommande){
 
     $pbx_cmd = '22gp98-'. $idCommande;
     $pbx_porteur = 'escande.florian.chatco@gmail.com';							//variable de test test@test.fr
-    $pbx_total = '300';								//variable de test 200
+//    $pbx_total = '300';								//variable de test 200
     $pbx_nb_produit = '1';					//variable de test 5
     $pbx_prenom_fact = 'Thomas';				//variable de test jean
     $pbx_nom_fact = 'Edison';					//variable de test dupont

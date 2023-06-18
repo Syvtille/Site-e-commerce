@@ -26,6 +26,12 @@ function get_results($requete)
     return $requete->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function execute_query($requete)
+{
+    global $pdo;
+    $pdo->query($requete);
+}
+
 function set_insert($table, $data)
 {
     global $pdo;
