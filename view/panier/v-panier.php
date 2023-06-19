@@ -1,3 +1,6 @@
+<?php
+//    require_once('src/controllers/c-quantite-panier.php');
+?>
 <div class="container">
     <h1>Votre panier</h1>
     <table class="table panier-table">
@@ -19,12 +22,13 @@
             ?>
             <tr>
                 <td><?= $panierProduit['nom'] ?></td>
-                <td><?= $panierProduit['quantite'] ?></td>
+                <td>
+                    <input type="number" name="produit_panier_quantite" id="panier_quantite_input_<?= $panierProduit['id_produit'] ?>" class="quantite-input form-control panier-quantite" value="<?= $panierProduit['quantite'] ?>" min="0" data-id_produit="<?= $panierProduit['id_produit'] ?>">
+                </td>
                 <td><?= $panierProduit['prix'] ?> €</td>
                 <td><?= $prixTotal ?> €</td>
                 <td>
-                    <a href="panier/<?= $panierProduit['id_produit'] ?>/" type="button"
-                       class="btn btn-danger btn-sm supprimerDuPanier">
+                    <a href="panier/<?= $panierProduit['id_produit'] ?>/" type="button" class="btn btn-danger btn-sm supprimerDuPanier">
                         <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 448 512">
                             <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <style>svg {
@@ -56,3 +60,61 @@
         </td>
     </tr>
 </div>
+
+<script>
+    const inputElements = document.querySelectorAll('.quantite-input');
+
+    inputElements.forEach(function(inputElement) {
+        inputElement.addEventListener('input', function(event) {
+            const nouvelleValeur = event.target.value;
+            const idProduit = event.target.getAttribute('data-id_produit');
+
+            fetch('src/controllers/c-quantite-panier.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'nouvelle_valeur=' + encodeURIComponent(nouvelleValeur) + '&id_produit=' + encodeURIComponent(idProduit),
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Base de données mise à jour avec succès.');
+                    } else {
+                        console.error('Erreur lors de la mise à jour de la base de données.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Une erreur s\'est produite lors de l\'envoi de la requête AJAX:', error);
+                });
+        });
+    });
+</script>
+<!---->
+<!--<script>-->
+<!--    const inputElements = document.querySelectorAll('.quantite-input');-->
+<!---->
+<!--    inputElements.forEach(function(inputElement) {-->
+<!--        inputElement.addEventListener('input', function(event) {-->
+<!--            const nouvelleValeur = event.target.value;-->
+<!--            const idProduit = event.target.getAttribute('data-id_produit');-->
+<!---->
+<!--            fetch('c-quantite-panier.php', {-->
+<!--                method: 'POST',-->
+<!--                headers: {-->
+<!--                    'Content-Type': 'application/x-www-form-urlencoded',-->
+<!--                },-->
+<!--                body: 'nouvelle_valeur=' + encodeURIComponent(nouvelleValeur) + '&id_produit=' + encodeURIComponent(idProduit),-->
+<!--            })-->
+<!--                .then(response => {-->
+<!--                    if (response.ok) {-->
+<!--                        console.log('Base de données mise à jour avec succès.');-->
+<!--                    } else {-->
+<!--                        console.error('Erreur lors de la mise à jour de la base de données.');-->
+<!--                    }-->
+<!--                })-->
+<!--                .catch(error => {-->
+<!--                    console.error('Une erreur s\'est produite lors de l\'envoi de la requête AJAX:', error);-->
+<!--                });-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->

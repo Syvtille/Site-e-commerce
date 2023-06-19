@@ -539,6 +539,9 @@ p.accueil-prix-produit strong{
 }
 
 /* PANIER */
+.panier-quantite{
+    width: 75px;
+}
 .validate-cart-btn{
 }
 .panier-table {
