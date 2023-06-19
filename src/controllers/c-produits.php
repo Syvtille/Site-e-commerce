@@ -8,8 +8,10 @@ function produits()
     if (isset($_GET['identifiant']) && $_GET['identifiant']) {
         $unProduits = get_result("SELECT * FROM produit WHERE identifiant = '" . $_GET['identifiant'] . "' AND statut=1");
         if ($unProduits) {
-            if (isset($_POST['produit_quantite']) && $_POST['produit_quantite'])
+            if (isset($_POST['produit_quantite']) && $_POST['produit_quantite']) {
                 ajouterAuPanier($unProduits['id'], $_POST['produit_quantite']);
+                Header('Location: ' . $urlSite . 'panier/');
+            }
 
             produitsSimple($unProduits);
         } else {
