@@ -14,4 +14,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         execute_query("UPDATE panier_produit SET quantite = " . $nouvelleValeur . " WHERE id_produit = " . $idProduit . " AND id_panier = " . $idPanier);
     }
 }
-

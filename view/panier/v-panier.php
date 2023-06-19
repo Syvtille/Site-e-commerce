@@ -23,7 +23,7 @@
             <tr>
                 <td><?= $panierProduit['nom'] ?></td>
                 <td>
-                    <input type="number" name="produit_panier_quantite" id="panier_quantite_input_<?= $panierProduit['id_produit'] ?>" class="quantite-input form-control panier-quantite" value="<?= $panierProduit['quantite'] ?>" min="0" data-id_produit="<?= $panierProduit['id_produit'] ?>">
+                    <input type="number" name="produit_panier_quantite" id="panier_quantite_input_<?= $panierProduit['id_produit'] ?>" class="quantite-input form-control panier-quantite" value="<?= $panierProduit['quantite'] ?>" min="1" data-id_produit="<?= $panierProduit['id_produit'] ?>">
                 </td>
                 <td><?= $panierProduit['prix'] ?> €</td>
                 <td><?= $prixTotal ?> €</td>
