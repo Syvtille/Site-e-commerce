@@ -88,7 +88,7 @@
                        required>
             </div>
             <div class="w-100 text-end">
-                <input type="submit" value="Commander" class="btn btnprimary">
+                <input type="submit" value="Commander" class="button-add-cart btn btnprimary">
             </div>
         </div>
     </form>

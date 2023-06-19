@@ -5,12 +5,8 @@ function paiement($idCommande, $total){
 
     $menu['page'] = "paiement";
 
-    var_dump($total);
-
     $total = str_replace(",", "", $total);
     $total = str_replace(".", "", $total);
-
-    var_dump($total);
 
     $pbx_site = '3277512';
     $pbx_total = $total;

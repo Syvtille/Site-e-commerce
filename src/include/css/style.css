@@ -205,6 +205,7 @@ header h1 {
 .button-add-cart:focus,
 .button-add-cart:active:focus,
 .button-add-cart {
+    color: white;
     outline: none !important;
     font-weight: bold !important;
     height: 50px;
