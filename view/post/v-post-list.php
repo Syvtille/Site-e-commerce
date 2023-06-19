@@ -4,8 +4,8 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <?php foreach($lstPost as $unPost): ?>
             <div class="col">
-                <div class="card shadow-sm">
-                    <img src="assets/img/<?=$unPost['image']?>" alt="<?=$unPost['titre']?>">
+                <div class="card shadow-sm blog-card">
+                    <img class="blog-post-image" src="assets/img/<?=$unPost['image']?>" alt="<?=$unPost['titre']?>">
 
                     <div class="card-body">
                         <p class="card-text">

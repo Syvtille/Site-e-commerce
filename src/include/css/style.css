@@ -525,6 +525,18 @@ p.accueil-prix-produit strong{
     width: 75px;
 }
 
+/* BLOGS */
+.blog-card{
+    background-color: rgba(var(--color-blank-rgb), 0.7);
+}
+.blog-card .card-text{
+    font-size: 1.1rem;
+}
+.blog-post-image {
+    width: 100%;
+    height: 200px; /* Vous pouvez définir la hauteur que vous souhaitez ici */
+    object-fit: cover;
+}
 
 /* PANIER */
 .validate-cart-btn{
