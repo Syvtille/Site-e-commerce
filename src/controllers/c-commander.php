@@ -67,10 +67,6 @@ WHERE id_produit = produit.id AND id_panier=" . $idPanier);
     //mettre au format du truc de paiement
     $total = $total['total'] * 100;
     $total = number_format($total, 0, '', '');
-//    var_dump($idCommande);
-//    var_dump($total);
-//    die();
-
     paiement($idCommande, $total);
 
     header('Location: https://s4-gp98.kevinpecro.info/paiement/');
