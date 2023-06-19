@@ -2,6 +2,7 @@
 
 // --------------- VARIABLES A MODIFIER ---------------
 
+
 // Ennonciation de variables
 $pbx_site = '3277512';
 $pbx_identifiant = '38023694';
