@@ -8,7 +8,7 @@ echo "<tbody>";
 foreach ($lstApi as $commande) {
     echo "<tr>";
     echo "<td>" . $commande['url'] . "</td>";
-    echo "<td>" . ($commande['param'] ? $commande['param'] : 'N/A') . "</td>";
+    echo "<td>" . ($commande['param'] ? $commande['param'] : '') . "</td>";
     echo "<td>" . $commande['method'] . "</td>";
     echo "<td>" . ($commande['statut'] ? 'Active' : 'Inactive') . "</td>";
     echo "</tr>";
