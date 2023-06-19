@@ -58,8 +58,21 @@ WHERE id_produit = produit.id AND id_panier=" . $idPanier);
         );
         set_insert("commande_produit", $valuesBdd);
     }
+    //vider le panier
     $pdo->query("DELETE FROM panier WHERE id = $idPanier");
     $pdo->query("DELETE FROM panier_produit WHERE id_panier = $idPanier");
+
+    //calculer le total
+    $total = get_result("SELECT SUM(prix_unitaire * quantite) AS total FROM commande_produit WHERE id_commande = $idCommande");
+    //mettre au format du truc de paiement
+    $total = $total['total'] * 100;
+    $total = number_format($total, 0, '', '');
+//    var_dump($idCommande);
+//    var_dump($total);
+//    die();
+
+    paiement($idCommande, $total);
+
     header('Location: https://s4-gp98.kevinpecro.info/paiement/');
     exit;
 }

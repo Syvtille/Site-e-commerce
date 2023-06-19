@@ -1,12 +1,16 @@
 <?php
 require_once('src/model.php');
 
-function paiement($total, $idCommande){
+function paiement($idCommande, $total){
 
     $menu['page'] = "paiement";
 
+    var_dump($total);
+
     $total = str_replace(",", "", $total);
     $total = str_replace(".", "", $total);
+
+    var_dump($total);
 
     $pbx_site = '3277512';
     $pbx_total = $total;
@@ -40,8 +44,6 @@ function paiement($total, $idCommande){
 
     //Cr�ation de l'url e-Transactions
     $serveurOK = 'https://'.$serveurOK.'/php/';
-    echo "Serveur ".$serveurOK;
-    echo "<br><br>";
 
     // Param�trage des urls de redirection navigateur client apr�s paiement
     $pbx_effectue = 'https://www.s4-gp98.kevinpecro.info/accepte';
@@ -59,7 +61,6 @@ function paiement($total, $idCommande){
     $pbx_cmd = '22gp98-'. $idCommande;
     $pbx_porteur = 'escande.florian.chatco@gmail.com';							//variable de test test@test.fr
 //    $pbx_total = '300';								//variable de test 200
-    $pbx_nb_produit = '1';					//variable de test 5
     $pbx_prenom_fact = 'Thomas';				//variable de test jean
     $pbx_nom_fact = 'Edison';					//variable de test dupont
     $pbx_adresse1_fact = '1 rue de Paris';				//variable de test 1 rue de Paris
@@ -82,11 +83,6 @@ function paiement($total, $idCommande){
     $pbx_retour = 'Mt:M;Ref:R;TypeCarte:C;CodeReponse:E;';
     $pbx_ruf1 = "POST";
 
-    echo "pbx_shoppingcart ".htmlentities($pbx_shoppingcart);
-    echo "<br><br>";
-    echo "pbx_billing ".htmlentities($pbx_billing);
-    echo "<br><br>";
-
     // On cr�e la cha�ne � hacher sans URLencodage
     $msg = "PBX_SITE=".$pbx_site.
         "&PBX_RANG=".$pbx_rang.
@@ -106,14 +102,10 @@ function paiement($total, $idCommande){
         "&PBX_SHOPPINGCART=".$pbx_shoppingcart.
         "&PBX_BILLING=".$pbx_billing.
         "&PBX_SOUHAITAUTHENT=".$pbx_souhaitauthent;
-    echo "msg ".htmlentities($msg);
-    echo "<br><br>";
 
 
     // Si la cl� est en ASCII, On la transforme en binaire
     $binKey = pack("H*", $hmackey);
-    echo "binKey ".bin2hex($binKey);
-    echo "<br><br>";
 
     $hmac = strtoupper(hash_hmac('sha512', $msg, $binKey));
 

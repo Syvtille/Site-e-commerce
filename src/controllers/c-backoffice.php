@@ -20,7 +20,7 @@ function paiementBackoffice()
         $numeroCommande = intval($matches[0]);
     }
 
-    execute_query("UPDATE Commande SET statut = 1 WHERE id = " . $numeroCommande);
-    execute_query("UPDATE Commande SET date_visibilite = NOW() WHERE id = " . $numeroCommande);
+    execute_query("UPDATE commande SET statut = 1 WHERE id = " . $numeroCommande);
+    execute_query("UPDATE commande SET date_visibilite = NOW() WHERE id = " . $numeroCommande);
 
 }

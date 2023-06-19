@@ -48,9 +48,9 @@ if (isset($_GET['url']) && $_GET['url']) {
             annule();
             break;
 
-        case 'paiement':
+        /*case 'paiement':
             paiement(1, 1);
-            break;
+            break;*/
         case 'commander':
             commander();
             break;
