@@ -1,6 +1,3 @@
-<?php
-//    require_once('src/controllers/c-quantite-panier.php');
-?>
 <div class="container">
     <h1>Votre panier</h1>
     <table class="table panier-table">
@@ -89,32 +86,3 @@
         });
     });
 </script>
-<!---->
-<!--<script>-->
-<!--    const inputElements = document.querySelectorAll('.quantite-input');-->
-<!---->
-<!--    inputElements.forEach(function(inputElement) {-->
-<!--        inputElement.addEventListener('input', function(event) {-->
-<!--            const nouvelleValeur = event.target.value;-->
-<!--            const idProduit = event.target.getAttribute('data-id_produit');-->
-<!---->
-<!--            fetch('c-quantite-panier.php', {-->
-<!--                method: 'POST',-->
-<!--                headers: {-->
-<!--                    'Content-Type': 'application/x-www-form-urlencoded',-->
-<!--                },-->
-<!--                body: 'nouvelle_valeur=' + encodeURIComponent(nouvelleValeur) + '&id_produit=' + encodeURIComponent(idProduit),-->
-<!--            })-->
-<!--                .then(response => {-->
-<!--                    if (response.ok) {-->
-<!--                        console.log('Base de données mise à jour avec succès.');-->
-<!--                    } else {-->
-<!--                        console.error('Erreur lors de la mise à jour de la base de données.');-->
-<!--                    }-->
-<!--                })-->
-<!--                .catch(error => {-->
-<!--                    console.error('Une erreur s\'est produite lors de l\'envoi de la requête AJAX:', error);-->
-<!--                });-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
