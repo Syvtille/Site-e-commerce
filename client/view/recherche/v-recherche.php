@@ -27,8 +27,15 @@
     </div>
 
     <div id="pagination" class="mt-3">
-        <button class="btn btn-secondary" id="previousButton" disabled>Précédent</button>
-        <button class="btn btn-secondary" id="nextButton" disabled>Suivant</button>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button class="btn btn-secondary" id="previousButton" disabled>Précédent</button>
+            </div>
+            <input type="number" class="form-control" id="pageInput" min="1" max="1" value="1">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" id="nextButton" disabled>Suivant</button>
+            </div>
+        </div>
         <span id="pageInfo"></span>
     </div>
 </div>
@@ -78,8 +85,16 @@
                 totalPageCount = data.total_pages;
                 updatePaginationButtons();
                 updatePageInfo();
+                updatePageInput();
             })
             .catch(error => console.log(error));
+    }
+
+    function updatePageInput() {
+        var pageInput = document.getElementById('pageInput');
+        pageInput.min = 1;
+        pageInput.max = totalPageCount;
+        pageInput.value = currentPage;
     }
 
     document.getElementById('searchButton').addEventListener('click', function() {
@@ -98,6 +113,18 @@
         if (currentPage < totalPageCount) {
             currentPage++;
             fetchResults();
+        }
+    });
+
+    document.getElementById('pageInput').addEventListener('change', function() {
+        var pageInput = document.getElementById('pageInput');
+        var newPage = parseInt(pageInput.value, 10);
+
+        if (newPage >= 1 && newPage <= totalPageCount) {
+            currentPage = newPage;
+            fetchResults();
+        } else {
+            pageInput.value = currentPage;
         }
     });
 </script>
