@@ -26,8 +26,11 @@
         </table>
     </div>
 
-    <div class="pagination">
+    <div class="pagination" id="pagination">
         <button class="btn btn-outline-secondary" id="previousButton">Précédent</button>
+        <input type="number" class="form-control" placeholder="Numéro de page" id="pageNumberInput">
+        <button class="btn btn-outline-secondary" id="goToPageButton">Aller</button>
+        <br>
         <span id="pageInfo"></span>
         <button class="btn btn-outline-secondary" id="nextButton">Suivant</button>
     </div>
@@ -103,7 +106,7 @@
         if (event.target.classList.contains('detailsButton')) {
             var siren = event.target.getAttribute('data-siren');
             var detailsContent = document.getElementById('detailsContent');
-            detailsContent.innerHTML = 'Détails de l\'entreprise avec le numéro SIREN : ' + siren;
+            detailsContent.innerHTML = 'Numéro de SIREN : ' + siren;
 
             // Récupérer les autres informations de l'entreprise à partir de l'attribut data- du bouton
             var attributs = event.target.attributes;
@@ -136,6 +139,18 @@
         if (currentPage < totalPageCount) {
             currentPage++;
             fetchResults();
+        }
+    });
+
+    document.getElementById('goToPageButton').addEventListener('click', function() {
+        var pageNumberInput = document.getElementById('pageNumberInput');
+        var pageNumber = parseInt(pageNumberInput.value);
+
+        if (!isNaN(pageNumber) && pageNumber >= 1 && pageNumber <= totalPageCount) {
+            currentPage = pageNumber;
+            fetchResults();
+        } else {
+            pageNumberInput.value = currentPage;
         }
     });
 

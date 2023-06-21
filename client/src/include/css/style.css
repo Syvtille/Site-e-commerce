@@ -58,3 +58,23 @@ main {
     padding: 10px;
     margin-top: 10px;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pagination button {
+    margin: 0 5px;
+}
+
+#pageInfo {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #818181;
+}
+#resultsTable {
+    width: 100%;
+}
