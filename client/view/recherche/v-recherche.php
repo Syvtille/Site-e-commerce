@@ -26,17 +26,15 @@
         </table>
     </div>
 
-    <div id="pagination" class="mt-3">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <button class="btn btn-secondary" id="previousButton" disabled>Précédent</button>
-            </div>
-            <input type="number" class="form-control" id="pageInput" min="1" max="1" value="1">
-            <div class="input-group-append">
-                <button class="btn btn-secondary" id="nextButton" disabled>Suivant</button>
-            </div>
-        </div>
+    <div class="pagination">
+        <button class="btn btn-outline-secondary" id="previousButton">Précédent</button>
         <span id="pageInfo"></span>
+        <button class="btn btn-outline-secondary" id="nextButton">Suivant</button>
+    </div>
+
+    <div class="details">
+        <h2>Détails de l'entreprise</h2>
+        <div id="detailsContent"></div>
     </div>
 </div>
 
@@ -79,22 +77,47 @@
                     var dateCreation = moment(enterprise.date_creation).format('DD/MM/YYYY');
                     newRow.insertCell(1).textContent = dateCreation;
                     newRow.insertCell(2).textContent = enterprise.categorie_entreprise;
-                    newRow.insertCell(3).innerHTML = '<a href="https://s4-gp98.kevinpecro.info/client/recherche/' + enterprise.siren + '" target="_blank">Voir Détails</a>';
+                    var detailsButton = document.createElement('button');
+                    detailsButton.classList.add('detailsButton');
+                    detailsButton.setAttribute('data-siren', enterprise.siren);
+
+                    // Stocker toutes les informations de l'entreprise dans le bouton
+                    for (var key in enterprise) {
+                        if (enterprise.hasOwnProperty(key) && key !== 'siren') {
+                            detailsButton.setAttribute('data-' + key, enterprise[key]);
+                        }
+                    }
+
+                    detailsButton.textContent = 'Voir Détails';
+                    newRow.insertCell(3).appendChild(detailsButton);
                 });
 
                 totalPageCount = data.total_pages;
                 updatePaginationButtons();
                 updatePageInfo();
-                updatePageInput();
             })
             .catch(error => console.log(error));
     }
 
-    function updatePageInput() {
-        var pageInput = document.getElementById('pageInput');
-        pageInput.min = 1;
-        pageInput.max = totalPageCount;
-        pageInput.value = currentPage;
+    function displayEnterpriseDetails(event) {
+        if (event.target.classList.contains('detailsButton')) {
+            var siren = event.target.getAttribute('data-siren');
+            var detailsContent = document.getElementById('detailsContent');
+            detailsContent.innerHTML = 'Détails de l\'entreprise avec le numéro SIREN : ' + siren;
+
+            // Récupérer les autres informations de l'entreprise à partir de l'attribut data- du bouton
+            var attributs = event.target.attributes;
+            var details = '';
+            for (var i = 0; i < attributs.length; i++) {
+                var attribut = attributs[i];
+                if (attribut.name.startsWith('data-') && attribut.name !== 'data-siren') {
+                    details += attribut.name.substring(5) + ': ' + attribut.value + '<br>';
+                }
+            }
+
+            // Afficher les autres informations de l'entreprise
+            detailsContent.innerHTML += '<br>' + details;
+        }
     }
 
     document.getElementById('searchButton').addEventListener('click', function() {
@@ -116,15 +139,5 @@
         }
     });
 
-    document.getElementById('pageInput').addEventListener('change', function() {
-        var pageInput = document.getElementById('pageInput');
-        var newPage = parseInt(pageInput.value, 10);
-
-        if (newPage >= 1 && newPage <= totalPageCount) {
-            currentPage = newPage;
-            fetchResults();
-        } else {
-            pageInput.value = currentPage;
-        }
-    });
+    document.getElementById('resultsTable').addEventListener('click', displayEnterpriseDetails);
 </script>
